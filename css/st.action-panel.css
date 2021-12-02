@@ -1,0 +1,130 @@
+.st-actionContainer {
+	z-index: 9999;
+	position: fixed;
+	display: inline-block;
+}
+
+.right-bottom {
+	bottom: 2em;
+	right: 2em;
+	float: right !important;
+}
+
+.left-bottom {
+	bottom: 2em;
+	left: 2em;
+	float: left !important;
+}
+
+div.st-actionContainer li{
+	list-style: none;
+}
+
+.st-panel{
+    width: auto;
+    margin-bottom: 10%;
+    background-color: #59cbe8;
+    color: #262f31;
+    border: 2px solid #eee;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
+    display: none;
+    font-weight: bold;
+    min-height: 140px;
+}
+
+div.st-panel{
+	font-size: 14px;
+	
+}
+
+.st-panel-header {
+      background-color: #e87722;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+.st-panel-contents{
+	padding: 15px;
+}
+
+.st-button-main{
+	font-size:24px;
+	color:#ffffff;
+	font-size:16px;
+	text-align:center;
+	line-height:60px;
+	cursor:pointer;
+}
+
+.st-btn-container{
+	    background: #e77721;
+	width:60px;
+	height:60px;
+	border-radius:100%;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	    border: 2px solid #fff;
+}
+
+.rotateForward{
+    animation-name:             rotateF; 
+    animation-duration:         0.65s; 
+    animation-iteration-count:  1;
+
+}
+
+@keyframes rotateF {
+  from {
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+  }
+  to { 
+            transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotateBackward{
+    animation-name:             rotateB; 
+    animation-duration:         0.65s; 
+    animation-iteration-count:  1;
+
+}
+
+@keyframes rotateB {
+  from {
+            transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+  }
+  to { 
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+  }
+}
+
+/*option grid in panel*/
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.gridChild {
+	flex: 0 0 33.33%;
+	height: 50px;
+	background-color: #999;
+	text-align:center;
+	text-decoration: none;
+	color: white;
+	line-height:50px;
+}
+
+.gridChild:hover {
+	background-color: #eee;
+	color: black;
+}

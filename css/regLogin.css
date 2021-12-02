@@ -1,0 +1,18 @@
+#sign article:first-of-type {
+        border-radius: 0;
+    }
+
+#logLanding #sign p {
+    font-weight: 200;
+}
+
+@media screen and (min-width: 580px) {
+    
+    #sign article:first-of-type {
+        border-radius: 0 0 0 10px;
+    }
+    
+    #sign article:last-of-type {
+        border-radius: 0 0 10px 0;
+    }
+}

@@ -1,0 +1,279 @@
+/* -------- 04-03 styles -------- */
+
+#loginLanding #sign header { /* change header bg color */
+    background-color: rgb(16,122,162);
+}
+
+#loginForm { /* set form bg color to a white with slight transparency*/
+    background-color: rgba(255,255,255,.9);
+}
+
+#sign article#loginForm { /* make labels align left */
+    text-align: left;
+}
+
+#sign article#loginForm div { /* align the button to be center */
+    text-align: center; 
+}
+
+label, input { 
+    display: block;
+}
+
+label { /* syle the labels  */
+    font-size: 1.8rem;
+    color: #767676;
+}
+
+input {
+    margin-bottom: 1em;
+    border-radius: 6px;
+    padding: 6px;
+    border: solid 1px #9B9B9B;
+    width: 100%;
+}
+
+#loginBtn {
+    background-color: rgb(16,122,162);
+    border: solid 2px rgb(16,122,162);
+    margin-bottom: 25px;
+}
+
+form .fas { /* color the font awesome icons */
+    color: #d1d1d1;
+}
+
+#sign aside p { /* style the forgot login info */
+    font-size: 1.625rem;
+    text-align: center;
+}
+
+aside a {
+    color: #107AA2;
+}
+
+
+/* -------- 04-04 styles -------- */
+div#pwdWrap {
+    display: flex; 
+    align-items: center; 
+    border: solid 1px #9b9b9b; 
+    background-color: #fff; 
+    border-radius: 6px;
+}
+
+form .fa-eye {
+    margin: 0 6px; 
+    cursor: pointer;
+    color: #888; 
+}
+
+form .fa-eye-slash {
+    margin: 0 6px; 
+    cursor: pointer;
+    color: #888; 
+    font-size: .95em; 
+}
+
+input#password {
+    margin-bottom: 0; 
+    border: none; 
+}
+
+
+/* -------- 04-05 styles -------- */
+#sign article {
+    border-radius: 0; /* need to overwrite from base file. This will eliminate the rounded corners. */
+}
+
+#sign article#signupForm { /* we want to round the bottom corners of the 2nd article only and overwrite alignment from our base.css file. */
+    text-align: left;
+    border-radius: 0 0 10px 10px;
+}
+
+#sign #welcome { /* add the teal bg to the first article */
+    background-color: rgba(187, 247, 253, .9);
+    align-items: flex-start;
+}
+/* style the p tag */
+#sign p {
+    font-weight: 200;
+    font-size: 1.9375rem;
+	color: #555555;
+    text-align: left;
+    margin-bottom: .75em;
+}
+/*set the bg to white for overall form (this shows up on bottom article */
+#signupForm {
+    background-color: rgba(255,255,255,.9);
+}
+/* password wrapper */
+#signupLanding div#pwdWrap {
+    margin-bottom: 1em; 
+}
+
+/* style the 'optional' text */
+#signupLanding label span {
+    font-size: .8em;
+    color: #999;
+}
+
+#signupLanding #signupBtn {
+    background-color: rgb(26,96,105);
+    border: solid 2px rgb(26,96,105);
+    margin-bottom: 25px;
+}
+
+#loginLanding #sign article {
+    border-radius: 0 0 10px 10px;
+}
+
+/* -------- 04-06 styles -------- */
+div#pwdWrap {
+    position: relative; 
+}
+
+#cityWrap {
+    position: relative;
+    display: flex;
+}
+
+i.fas.fa-question-circle {
+    position: absolute;
+    right: 9px;
+    top: -18px;
+    font-size: .9em;
+    color: rgba(221,113,6,.8);
+}
+
+.show {
+    display: block;
+    padding: 5px 8px;
+    background: rgb(221,113,6);
+    color: #fff;
+    z-index: 9;
+    font-size: 0.75em;
+    line-height: 18px;
+	top: -91px;
+    left: -163px;
+    width: 1355%;
+    border: solid 1px #fff;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+}
+
+.show#cty {
+	top: -110px;
+}
+
+.hide {
+    display: none;
+}
+
+/* close icon (x) */
+i.fas.fa-times-circle {
+    position: absolute;
+    top: -11px;
+    right: -10px;
+    z-index: 160;
+    color: rgb(221,113,6);
+    font-size: 1rem;
+}
+/* downward pointing arrow */
+i.fas.fa-caret-down {
+    position: absolute;
+    bottom: -10px;
+    left: 85%;
+    font-size: 1.5em;
+    color: rgb(221,113,6);
+}
+
+
+/* -------- 04-07 styles -------- */
+progress#strength {
+	width: 60%; 
+	height: 8px;
+	border: solid 1px #ccc;
+	border-radius: 6px;
+	background-color: #fff;
+	margin: .2em .2em .2em 0;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+							   transparent 33%, rgba(0, 0, 0, .1) 33%, 
+							   rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+							   rgba(255, 255, 255, .25), 
+							   rgba(0, 0, 0, .25));
+	border-radius: 2px; 
+	background-size: 35px 20px, 100% 100%, 100% 100%; 
+}
+
+/* add a new color at specified classes are added to bar (via the JS). */
+progress.pb20[value]::-webkit-progress-value {
+	 background-color: rgba(185,4,4,.8); /* red */
+}
+progress.pb40[value]::-webkit-progress-value {
+	background-color: rgba(222,113,4,.8); /* orange */
+}
+progress.pb60[value]::-webkit-progress-value {
+	background-color: rgba(242,205,5,.8); /* yellow */
+}
+progress.pb80[value]::-webkit-progress-value {
+	background-color: rgba(5,206,242,.8); /* blue */
+}
+progress.pb100[value]::-webkit-progress-value {
+	background-color: rgba(82,213,172,.8); /* green */
+}
+
+/* fixes for FF  */
+ progress[value]::-moz-progress-bar {
+  background-image:
+	   -moz-linear-gradient(-45deg, 
+							   transparent 33%, rgba(0, 0, 0, .1) 33%, 
+							   rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -moz-linear-gradient(top, 
+							   rgba(255, 255, 255, .25), 
+							   rgba(0, 0, 0, .25));
+
+	border-radius: 2px; 
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+/* set colors for FF based on how full progress bar is */
+progress.pb20[value]::-moz-progress-bar {
+	 background-color: rgba(185,4,4,.8); /* red */
+}
+progress.pb40[value]::-moz-progress-bar {
+	background-color: rgba(222,113,4,.8); /* orange */
+}
+progress.pb60[value]::-moz-progress-bar {
+	background-color: rgba(242,205,5,.8); /* yellow */
+}
+progress.pb80[value]::-moz-progress-bar {
+	background-color: rgba(5,206,242,.8); /* blue */
+}
+progress.pb100[value]::-moz-progress-bar {
+	background-color: rgba(82,213,172,.8); /* green */
+}
+
+/*        end password strength    */
+
+
+/* -------- Media Query: med/large screen styles -------- */
+@media screen and (min-width: 550px) {
+/* Large screen 2 column layout */
+     #signupLanding #sign {
+        display: grid;
+        grid-template-columns: 40% 60%; /* 2 columns  */
+        max-width: 850px;
+      }
+/*	adjust the border radius of the articles for the 2 column layout. */
+    #sign #welcome { border-radius: 0 0 0 10px; }
+    #sign article#signupForm { border-radius: 0 0 10px 0; }
+}
+
+
+

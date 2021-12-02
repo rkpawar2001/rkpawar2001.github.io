@@ -1,0 +1,106 @@
+/* Why Help */
+#whyHelp .wrapper {
+    background: linear-gradient(0deg, rgba(85, 32, 101, 0.51) 0%, rgba(2,160,171,0.6376925770308124) 100%)
+}
+
+#whyHelp #sign{
+    background: url(../image1/plasticFish2.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+#sign article {
+    display: inherit;
+    text-align: left;
+    padding: 50px 40px;
+}
+
+#sign article#pane2 {
+    padding-top: 25px;
+}
+
+#sign article:first-of-type {
+    border-radius: 0;
+    padding-bottom: 0;
+}
+
+#sign article ul {
+    margin-left: 2em;
+    font-size: 1.1em;
+    text-shadow: 0px 0px 4px #fff;
+    font-weight: 400;
+}
+
+#pane1, #pane2 {
+    background-color: rgba(255,255,255,.6); 
+    color: #226169;
+}
+
+#sign a {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#pane2 .btn {
+    background-color: #f07d3a;
+    border: none;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    margin: 10px 0 5px;
+    min-width: 125px;
+    max-width: 250px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.small {
+    font-size: 80%;
+}
+
+#whyHelp p.small a {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+@media screen and (min-width: 580px) {
+
+    #whyHelp #sign article {
+        display: flex;
+        justify-content: flex-start;
+        align-items: normal;
+    }
+
+    #sign article#pane2 {
+        padding-top: 50px;
+    }
+
+   #pane1 h2 {
+        margin-bottom: .75em;
+    }
+
+    #sign article:first-of-type {
+        border-radius: 0 0 0 10px;
+    }
+    
+     #sign article:last-of-type {
+        border-radius: 0 0 10px 0;
+    }
+}
+@media screen and (min-width:580px) and (max-width: 720px) {
+     #whyHelp #sign {
+        min-height: 530px;
+    }
+
+    #whyHelp #sign article {
+        min-height: 455px;
+    }
+}

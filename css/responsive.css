@@ -1,0 +1,21 @@
+@media (max-width: 670px) {
+    .top-alert-content {
+        position: fixed;
+        left: 61%;
+        top: 51px;
+        width: 38%;
+        height: 65px;
+        z-index: 1055;
+    }
+    .top-alert{
+        padding: 3px 54px;
+    }
+    footer {
+        font-size: small;
+        text-align: center;
+        clear: both;
+        position: relative;
+        padding-bottom: 36px;
+    }
+}
+
