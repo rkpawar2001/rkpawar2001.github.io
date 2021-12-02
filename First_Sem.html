@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta name="Description" content="First Year Engineering Notes" />
+    <meta name="Keywords" content="First Year Engineering Notes" />
+    <link rel="canonical" href="https://www.uitians.educationhost.cloud" />
+    <link rel="icon" type="image/jpeg" href="images/logo.png">
+    <script src="https://kit.fontawesome.com/f65934061a.js" crossorigin="anonymous"></script>
+    <title>Uitians | Technical Notes | First Year First Sem Engineering Notes </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/pdf.css" />
+    <link rel="stylesheet" href="css/videos.css" />
+    <link rel="stylesheet" href="css/RegN.css" !important>
+    <link rel="stylesheet" href="css/1st.css" />
+
+
+    <script src="/js/jquery.min.js"></script>
+    <!-- <script src="js/fontawesome.js"></script> -->
+    <script src="/js/mui-combined.min.js"></script>
+
+    <style>
+        .cse table.gsc-search-box td.gsc-input,
+        table.gsc-search-box td.gsc-input {
+            line-height: 33px;
+        }
+
+        .tp-vd-courses {
+            margin: 15px auto 10px auto;
+            overflow: hidden;
+        }
+
+        /* Slider */
+
+        .mui-tabs__bar.mui-tabs__bar--justified {
+            width: 96.5%;
+            margin: 0 auto;
+        }
+
+        .slick-slider {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slick-list:focus {
+            outline: none;
+        }
+
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+        }
+
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track:after {
+            clear: both;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide {
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+
+        [dir='rtl'] .slick-slide {
+            float: right;
+        }
+
+        .slick-slide img {
+            width: 100%;
+            display: inline;
+            margin: 0px 0px 7px 0px !important;
+        }
+
+        .slick-slide.slick-loading img {
+            display: none;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-vertical .slick-slide {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'slick';
+            font-size: 26px;
+            line-height: 1;
+            opacity: .75;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'slick';
+            font-size: 26px;
+            line-height: 1;
+            opacity: .75;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+
+        .slick-prev {
+            left: -10px;
+        }
+
+        .slick-next {
+            right: -10px;
+        }
+
+        .slick-prev,
+        .slick-next {
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            top: 50%;
+            display: block;
+            padding: 5px 5px 0px 5px;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: #fff;
+            border-radius: 90px;
+            -webkit-border-radius: 90px;
+            z-index: 999;
+            box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+            -webkit-box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 128px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .card {
+            width: 216px;
+            min-height: 272px;
+            background: #fff;
+            padding: 0px;
+            margin: 0 auto;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .paddings {
+            padding-left: 0px;
+            padding-right: 0px;
+            line-height: 38px;
+        }
+
+        strike {
+            color: #f00;
+            font-size: 13px;
+        }
+
+        .mui-tabs__bar {
+            border-bottom: 1px solid #cecece;
+        }
+
+        .mui-tabs__bar>li.mui--is-active>a {
+            color: #3fb35b !important;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+
+        .mui-tabs__bar>li.mui--is-active {
+            border-bottom: 2px solid #3fb35b !important;
+        }
+
+        .mui-tabs__bar.mui-tabs__bar--justified>li>a {
+            font-size: 18px;
+            color: #989898;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+
+        hr {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            border: 0;
+            height: 1px;
+        }
+
+        .more-btn {
+            background: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            padding: 5px 10px;
+            margin: 10px 20px 0px 0px;
+            float: right;
+            cursor: pointer;
+            text-decoration: none;
+            clear: both;
+        }
+
+        .more-btn a {
+            color: #232323;
+            text-decoration: none;
+        }
+
+        .card-title {
+            font-size: 14.5px;
+            font-weight: 600;
+            text-align: left;
+            line-height: 19px;
+            height: 49px;
+            padding: 0px 10px 7px 20px;
+        }
+
+        .card a {
+            font-size: 13px;
+            color: #232323;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .card a div {
+            height: 35px;
+            text-align: left;
+            padding: 0px 0px 0px 20px;
+            margin: 0px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        img.height-50 {
+            min-height: 25px !important;
+            width: 25px !important;
+            padding: 2px;
+            margin: 0px auto 0px auto !important;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #eee;
+            border-radius: 90px;
+            -moz-border-radius: 90px;
+        }
+
+        .text-center span {
+            font-size: 13px;
+        }
+
+        @media (min-width:224px) {
+            .slick-initialized .slick-slide {
+                min-height: 285px;
+            }
+
+            .mui-tabs__bar.mui-tabs__bar--justified>li {
+                display: table-caption;
+            }
+        }
+
+        @media (min-width:576px) {
+            .slick-initialized .slick-slide {
+                min-height: 285px;
+            }
+
+            .mui-tabs__bar.mui-tabs__bar--justified>li {
+                display: table-caption;
+            }
+        }
+
+        @media (min-width:768px) {
+            .slick-initialized .slick-slide {
+                min-height: 275px;
+            }
+
+            .mui-tabs__bar.mui-tabs__bar--justified>li {
+                display: table-cell;
+            }
+        }
+
+        @media (min-width:1200px) {
+            .slick-initialized .slick-slide {
+                min-height: 275px;
+            }
+
+            .mui-tabs__bar.mui-tabs__bar--justified>li {
+                display: table-cell;
+            }
+        }
+
+        .top-trainer {
+            margin: 0;
+            padding: 10px 0px 10px 0px;
+            outline: none !important;
+            outline: none !important;
+        }
+
+        img.top-trainer-img {
+            width: 45% !important;
+            height: 100px !important;
+            padding: 2px !important;
+            margin: 35px 0px 1px 0px !important;
+            border: 1px solid #ccc;
+            border-radius: 190px;
+            -webkit-border-radius: 190px;
+            outline: none !important;
+        }
+
+        .top-trainer-desc {
+            font-size: 13px !important;
+            padding: 0 10px !important;
+            margin: 0 !important;
+            border-bottom: none !important;
+        }
+
+        .top-trainer-desc p {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            outline: none !important;
+        }
+
+        .top-trainer-desc p strong {
+            color: #444343;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0HSK9V0BK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W0HSK9V0BK');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MCVF6LQ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185348326-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-185348326-1');
+    </script>
+
+
+</head>
+
+<body style="padding-top: 100px">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                        class="icon-bar"></span></button>
+                <a class="navbar-brand" href="index.html"><i class="fa fa-book fa-pad"></i> Uitians | Technical Notes <i
+                        class="fa fa-book fa-pad"></i></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="topFixedNavbar1">
+                <ul class="nav navbar-nav navlist">
+                    <li class="navlistitem"><a href="index.html">Home</a> </li>
+                    <li class="navlistitem"><a href="about.html">About</a> </li>
+                    <li class="navlistitem active"><a href="services.html">Services</a> </li>
+                    <li class="navlistitem"><a href="contact.php">Contact</a></li>
+                </ul>
+                <ul>
+                    <li class="navlistitem1"><a href="login.html">Log In</a></li>
+                    <li class="navlistitem1"><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="places-title">
+                <h3>
+                    <center>
+                        <i class="fa fa-book fa-pad" aria-hidden="true"> First Semester Notes of Uit Rgpv Bhopal
+                            (B.tech)</i>
+                    </center><br>
+                    For All Year's Syllabus & Scheme <a href="https://www.uitrgpv.ac.in/uploadcontent/viewscheme.aspx"
+                        target="_blank">click
+                        here</a>
+
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12 padding" style="margin:0px 0px 0px 45px;padding:0px 15px 0px 0px;">
+        <div class="">
+            <div class="col-xl-2 col-md-3 col-sm-6 col-6 npl">
+                <div class="tp-card">
+                    <a href="BASIC CIVIL AND MECHANICS.zip" download="Civil and mechanics notes">
+                        <div class="card-content" title="Engineering Mechanics & Civil Engineering">
+                            <img data-type="" data-ctype="C" data-progressive="" class="pdf-img"
+                                src="bookimages/Civil Engineering.jpg"
+                                alt="Engineering Mechanics & Civil Engineering Image">
+                            <div class="tp-card-title" title="Engineering Mechanics & Civil Engineering">
+                                Engineering Mechanics & Civil Engineering Notes</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="col-md-12 col-sm-12 course-author-title">
+                        <a href="Civil_Syllabus.html" title="Subject Syllabus"> Syllabus </a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ebook-author-dtls">
+                        <div class="col-12 col-sm-12 text-center course-price">
+                            &nbsp;<span> <i class="fa fa-download"></i> &nbsp;Click to download</span>
+                        </div>
+                        <div class="col-12 col-sm-12 text-center add-cart-hover">
+                            <div class="download-form" title="Download Now"><input type="hidden">
+                                <i class="fa fa-download"> </i> &nbsp;&nbsp; <a href="BASIC CIVIL AND MECHANICS.zip"
+                                    download="Civil and mechanics notes">Download Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-3 col-sm-6 col-6 npl">
+                <div class="tp-card">
+                    <a href="FUNDAMENTALS OF MECHANICAL ENGINEERING.zip"
+                        download="FUNDAMENTALS OF MECHANICAL ENGINEERING notes">
+                        <div class="card-content" title="Fundamentals of Mechanical Engineering">
+                            <img data-type="" data-ctype="C" data-progressive="" class="pdf-img"
+                                src="bookimages/Mechanical Engineering.jpg"
+                                alt="Fundamentals of Mechanical Engineering">
+                            <div class="tp-card-title" title="Fundamentals of Mechanical Engineering">
+                                Fundamentals of Mechanical Engineering Notes</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="col-md-12 col-sm-12 course-author-title">
+                        <a href="#" title="Subject Syllabus">Syllabus</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ebook-author-dtls">
+                        <div class="col-12 col-sm-12 text-center course-price">
+                            &nbsp;<span> <i class="fa fa-download"></i> &nbsp;Click to download</span>
+                        </div>
+                        <div class="col-12 col-sm-12 text-center add-cart-hover">
+                            <div class="download-form" title="Download Now"><input type="hidden">
+                                <i class="fa fa-download"> </i> &nbsp;&nbsp; <a
+                                    href="FUNDAMENTALS OF MECHANICAL ENGINEERING.zip"
+                                    download="FUNDAMENTALS OF MECHANICAL ENGINEERING notes"> Download Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-3 col-sm-6 col-6 npl">
+                <div class="tp-card">
+                    <a href="ENGINEERING MATHEMATICS-I.zip" download="ENGINEERING MATHEMATICS-I notes">
+                        <div class="card-content" title="Engineering Mathematics - I ">
+                            <img data-type="" data-ctype="C" data-progressive="" class="pdf-img"
+                                src="bookimages/Engineering Mathematics -I_.png"
+                                alt="Engineering Mathematics - I Image">
+                            <div class="tp-card-title" title="Engineering Mathematics - I">
+                                Engineering Mathematics - I Notes</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="col-md-12 col-sm-12 course-author-title">
+                        <a href="#" title="Subject Syllabus">Syllabus</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ebook-author-dtls">
+                        <div class="col-12 col-sm-12 text-center course-price">
+                            &nbsp;<span> <i class="fa fa-download"></i> &nbsp;Click to download</span>
+                        </div>
+                        <div class="col-12 col-sm-12 text-center add-cart-hover">
+                            <div class="download-form" title="Download Now"><input type="hidden">
+                                <i class="fa fa-download"> </i> &nbsp;&nbsp; <a href="ENGINEERING MATHEMATICS-I.zip"
+                                    download="ENGINEERING MATHEMATICS-I notes"> Download Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-3 col-sm-6 col-6 npl">
+                <div class="tp-card">
+                    <a href="ENGINEERING PHYSICS.zip" download="ENGINEERING PHYSICS notes">
+                        <div class="card-content" title="Engineering Physics ">
+                            <img data-type="" data-ctype="C" data-progressive="" class="pdf-img"
+                                src="bookimages/Physics.jpg" alt="Engineering Physics Image">
+                            <div class="tp-card-title" title="Engineering Physics">
+                                Engineering Physics Notes</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="col-md-12 col-sm-12 course-author-title">
+                        <a href="#" title="Subject Syllabus">Syllabus</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ebook-author-dtls">
+                        <div class="col-12 col-sm-12 text-center course-price">
+                            &nbsp;<span> <i class="fa fa-download"></i> &nbsp;Click to download</span>
+                        </div>
+                        <div class="col-12 col-sm-12 text-center add-cart-hover">
+                            <div class="download-form" title="Download Now"><input type="hidden">
+                                <i class="fa fa-download"> </i> &nbsp;&nbsp; <a href="ENGINEERING PHYSICS.zip"
+                                    download="ENGINEERING PHYSICS notes"> Download Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-3 col-sm-6 col-6 npl">
+                <div class="tp-card">
+                    <a href="FUNDAMENTALS OF COMPUTER SCIENCE & ENGINEERING.zip"
+                        download="FUNDAMENTALS OF COMPUTER SCIENCE & ENGINEERING notes">
+                        <div class="card-content" title="Fundamentals of Computer Science & Engineering">
+                            <img data-type="" data-ctype="C" data-progressive="" class="pdf-img"
+                                src="bookimages/Computer Engineering.jpg"
+                                alt="Fundamentals of Computer Science & Engineering Image">
+                            <div class="tp-card-title" title="Fundamentals of Computer Science & Engineering">
+                                Fundamentals of Computer Science & Engineering Notes</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="col-md-12 col-sm-12 course-author-title">
+                        <a href="#" title="Subject Syllabus">Syllabus</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ebook-author-dtls">
+                        <div class="col-12 col-sm-12 text-center course-price">
+                            &nbsp;<span> <i class="fa fa-download"></i> &nbsp;Click to download</span>
+                        </div>
+                        <div class="col-12 col-sm-12 text-center add-cart-hover">
+                            <div class="download-form" title="Download Now"><input type="hidden">
+                                <i class="fa fa-download"> </i> &nbsp;&nbsp; <a
+                                    href="FUNDAMENTALS OF COMPUTER SCIENCE & ENGINEERING.zip"
+                                    download="FUNDAMENTALS OF COMPUTER SCIENCE & ENGINEERING notes"> Download Now </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Copyright © 2021. <a href="https://www.uitians.educationhost.cloud/" target="_blank">
+            www.uitians.educationhost.cloud</a>
+
+    </footer>
+
+
+    <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            return null;
+        }
+        $(document).ready(function () {
+            var utm_source = getQueryVariable("utm_source");
+            var utm_content = getQueryVariable("utm_content");
+            var utm_medium = getQueryVariable("utm_medium");
+
+            if (utm_source && utm_content) {
+                var date = new Date();
+                date.setTime(date.getTime() + (15 * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+                document.cookie = "utm_source" + "=" + (utm_source || "") + expires + "; path=/";
+                document.cookie = "utm_content" + "=" + (utm_content || "") + expires + "; path=/";
+                document.cookie = "utm_medium" + "=" + (utm_medium || "") + expires + "; path=/";
+            }
+
+            $('.multiple-items, .multiple-items-1, .multiple-items-2, .multiple-items-3').slick({
+                infinite: false,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                responsive: [
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+
+                ]
+            });
+
+
+        });
+        $('.mui-tabs__bar>li').click(function () {
+            $('.mui-tabs__pane.inactive .slick-track').css('width', '2340px');
+            $('.mui-tabs__pane.inactive .slick-track .multiple').css('width', '228px');
+        });
+    </script>
+
+
+    <script>
+
+        var start_from_1 = 0;
+        var start_from_2 = 0;
+        var start_from_3 = 0;
+        $(document).ready(function () {
+            var cid = $('.mui-tabs__bar li').find('a').data('cid');
+            $('.mui-tabs__bar_1 li').click(function () {
+                var cid = $(this).find('a').data('cid');
+                start_from_1 = 0;
+                getIndexSliderDetails(cid, 'L');
+                $('.mui-tabs__bar_1 li').removeClass('mui--is-active');
+                $(this).addClass('mui--is-active');
+            });
+            $('.mui-tabs__bar_2 li').click(function () {
+                var cid = $(this).find('a').data('cid');
+                start_from_2 = 0;
+                getIndexSliderDetails(cid, 'F');
+                $('.mui-tabs__bar_2 li').removeClass('mui--is-active');
+                $(this).addClass('mui--is-active');
+            });
+            $('.mui-tabs__bar_3 li').click(function () {
+                var cid = $(this).find('a').data('cid');
+                start_from_3 = 0;
+                getIndexSliderDetails(cid, 'T');
+                $('.mui-tabs__bar_3 li').removeClass('mui--is-active');
+                $(this).addClass('mui--is-active');
+            });
+
+            $('#pane-justified-1 button.slick-next').click(function () {
+                var cid = $('.mui-tabs__bar_1 li.mui--is-active').find('a').data('cid');
+                var ctype = $('.mui-tabs__bar_1 li.mui--is-active').find('a').data('ctype');
+                start_from_1 = +start_from_1 + +5;
+                getIndexSliderDetails(cid, ctype);
+            });
+
+            $('#pane-justified-2 button.slick-next').click(function () {
+                var cid = $('.mui-tabs__bar_2 li.mui--is-active').find('a').data('cid');
+                var ctype = $('.mui-tabs__bar_2 li.mui--is-active').find('a').data('ctype');
+                start_from_2 = +start_from_2 + +5;
+                getIndexSliderDetails(cid, ctype);
+            });
+
+            $('#pane-justified-3 button.slick-next').click(function () {
+                var cid = $('.mui-tabs__bar_3 li.mui--is-active').find('a').data('cid');
+                var ctype = $('.mui-tabs__bar_3 li.mui--is-active').find('a').data('ctype');
+                start_from_3 = +start_from_3 + +5;
+                getIndexSliderDetails(cid, ctype);
+            });
+
+        });
+
+        videobaseurl = "";
+        function getIndexSliderDetails(cid, ctype) {
+            if (ctype == 'L') {
+                start_from = start_from_1;
+            }
+            if (ctype == 'F') {
+                start_from = start_from_2;
+            }
+            if (ctype == 'T') {
+                start_from = start_from_3;
+            }
+            $.ajax({
+                url: videobaseurl + "/slider.php",
+                method: "POST",
+                data: { "flag": "get_index_slider_details", "cid": cid, "course_type": ctype, "start_from": start_from },
+            }).done(function (data) {
+                var pane_justified = '';
+                var multiple_items = '';
+                var tabs__bar = '';
+                var next_btn = '';
+                var prev_btn = '';
+                var slider = '';
+                var slider_btn = '';
+
+                if (ctype == 'L') {
+                    pane_justified = '#pane-justified-1';
+                    multiple_items = '.multiple-items-1';
+                    tabs__bar = '.mui-tabs__bar_1 li.mui--is-active';
+                    next_btn = '#pane-justified-1 button.slick-next';
+                    prev_btn = '#pane-justified-1 button.slick-prev';
+                    slider = '#pane-justified-1 .slider .multiple.item';
+                    slider_btn = '#pane-justified-1 .slider .slick-next';
+                }
+                if (ctype == 'F') {
+                    pane_justified = '#pane-justified-2';
+                    multiple_items = '.multiple-items-2';
+                    tabs__bar = '.mui-tabs__bar_2 li.mui--is-active';
+                    next_btn = '#pane-justified-2 button.slick-next';
+                    prev_btn = '#pane-justified-2 button.slick-prev';
+                    slider = '#pane-justified-2 .slider .multiple.item';
+                    slider_btn = '#pane-justified-2 .slider .slick-next';
+                }
+                if (ctype == 'T') {
+                    pane_justified = '#pane-justified-3';
+                    multiple_items = '.multiple-items-3';
+                    tabs__bar = '.mui-tabs__bar_3 li.mui--is-active';
+                    next_btn = '#pane-justified-3 button.slick-next';
+                    prev_btn = '#pane-justified-3 button.slick-prev';
+                    slider = '#pane-justified-3 .slider .multiple.item';
+                    slider_btn = '#pane-justified-3 .slider .slick-next';
+                }
+                $(pane_justified).html(data);
+                $(multiple_items).slick({
+                    infinite: false,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    responsive: [
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+                if (ctype == 'L') {
+                    $(next_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_1 = +start_from_1 + +5;
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                    $(prev_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_1 = +start_from_1 - +5;
+                        if (start_from_1 < 0) {
+                            start_from_1 = 0;
+                        }
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                }
+
+                if (ctype == 'F') {
+                    $(next_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_2 = +start_from_2 + +5;
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                    $(prev_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_2 = +start_from_2 - +5;
+                        if (start_from_2 < 0) {
+                            start_from_2 = 0;
+                        }
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                }
+
+                if (ctype == 'T') {
+                    $(next_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_3 = +start_from_3 + +5;
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                    $(prev_btn).click(function () {
+                        var cid = $(tabs__bar).find('a').data('cid');
+                        var ctype = $(tabs__bar).find('a').data('ctype');
+                        start_from_3 = +start_from_3 - +5;
+                        if (start_from_3 < 0) {
+                            start_from_3 = 0;
+                        }
+                        getIndexSliderDetails(cid, ctype)
+                    });
+                }
+                var numItems = $(slider).length;
+                if (numItems <= 6) {
+                    $(slider_btn).css('display', 'none');
+                } else {
+                    $(slider_btn).css('display', 'block');
+                }
+                start_from = (+start_from + +5);
+            });
+        }
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="css/animate.css-master/Animation.js" type="text/javascript"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <script src="js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/st.action-panel.js"></script>
+
+    <script src="js/jquery.mobile.customized.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+
+    <script src="js/camera.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+
+    <script src="JS/jquery.jfontsize-1.0.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

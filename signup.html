@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="Description" content="Engineering Notes ,eBooks and Previous Year Paper" />
+    <meta name="Keywords" content="First Year Engineering Notes ,eBooks and Previous Year Paper" />
+    <link rel="canonical" href="https://www.uitians.educationhost.cloud" />
+    <meta name="author" />
+    <title>Uitians | Techncial Notes | Signup</title>
+    <script src="js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/04_base.css">
+    <link rel="stylesheet" href="css/04_form.css">
+    <meta name="description" content="Favicon">
+    <!-- https://www.w3.org/2005/10/howto-favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.png">
+    <!-- <title>Uitians Website for Technical Notes</title>-->
+    <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0HSK9V0BK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W0HSK9V0BK');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MCVF6LQ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185348326-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-185348326-1');
+    </script>
+
+
+    <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+    <script>var __adobewebfontsappname__ = "dreamweaver"</script>
+    <script src="http://use.edgefonts.net/actor:n4:default;alfa-slab-one:n4:default.js" type="text/javascript"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                        class="icon-bar"></span></button>
+                <a class="navbar-brand" href="index.html"><i class="fa fa-book fa-pad"></i> Uitians | Technical Notes <i
+                        class="fa fa-book fa-pad"></i></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="topFixedNavbar1">
+                <ul class="nav navbar-nav navlist">
+                    <li class="navlistitem"><a href="index.html">Home</a> </li>
+                    <li class="navlistitem"><a href="about.html">About</a> </li>
+                    <li class="navlistitem"><a href="services.html">Services</a> </li>
+                    <li class="navlistitem"><a href="contact.php">Contact</a></li>
+                </ul>
+                <ul>
+                    <li id="listitem"><a href="login.html">Log In</a></li>
+                    <li id="listitem" class="active"><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <body id="signupLanding">
+        <main class="wrapper">
+            <header id="logo">
+                <h1>Uitians</h1>
+            </header>
+            <section id="sign">
+                <header>
+                    <h1>Create an account</h1>
+                </header>
+
+                <article id="welcome">
+                    <p><strong>Hello there!</strong> By creating an account you will receive monthly news updates and
+                        get valuable tips. Members are eligible for early
+                        registration on events and sales. By making small contributions you can start a wave of change.
+                        Make a difference, save your time.</p>
+                    <p>Join now and create your personalized profile.</p>
+                </article>
+
+                <article id="signupForm">
+                    <form action="" method="post">
+
+                        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="password"><i class="fas fa-lock"></i> Password
+                            <!--password strength indicator, notice we are using aria-label to provide a label for this element since there is not a visible label on the screen -->
+                            <progress max="100" value="0" id="strength"
+                                aria-label="password strength progress bar"></progress>
+                        </label>
+
+
+                        <div id="pwdWrap">
+                            <!-- help-tip for password input field -->
+                            <i class="fas fa-question-circle tooltip">
+                                <!-- The span tag holds our help-tip message. -->
+                                <span class="helperText" id="tt">Make sure your password contains at least 10
+                                    characters, 1 upper and 1 lower case letter, 1 number and 1 symbol
+                                    <i class="fas fa-caret-down"></i>
+                                    <i class="fas fa-times-circle close"></i>
+                                </span>
+                            </i>
+                            <input type="password" id="password" name="password" required>
+                            <i class="fas fa-eye eyeIcon"></i>
+                        </div>
+
+                        <label for="city"><i class="fas fa-map-marker-alt"></i> City <span>(Optional)</span></label>
+
+                        <div id="cityWrap">
+                            <!-- help-tip for city input field -->
+                            <i class="fas fa-question-circle tooltip city">
+                                <span class="helperText" id="cty">Why do we collect this information? To personalize our
+                                    offerings based on your location. You can always change or edit this under your
+                                    account settings.
+                                    <i class="fas fa-caret-down"></i>
+                                    <i class="fas fa-times-circle close"></i>
+                                </span>
+                            </i>
+                            <input type="text" id="city" name="city">
+                        </div>
+
+                        <div>
+                            <button onclick="JSalert()" id="signupBtn">Join now <i
+                                    class="fas fa-angle-right"></i></button>
+                        </div>
+
+                        <aside>
+                            <p>By signing up, you agree to our <a href="Terms_of_Services.html">Terms of Service</a>, <a href="Privacy_Policy.html">Privacy
+                                    Policy</a> and <a href="Refund_Policy.html">Refund Policy</a></p>
+                        </aside>
+                    </form>
+                </article>
+            </section>
+        </main>
+
+        <footer>Copyright © 2020. <a href="https://www.uitians.educationhost.cloud/" target="_blank">
+                www.uitians.educationhost.cloud</a>
+        </footer>
+
+
+        <script type="text/javascript">
+            function JSalert() {
+                swal({
+                    title: "This functionality will be coming soon!",
+                    text: "Are you happy with this site?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "I am happy!",
+                    cancelButtonText: "I am not happy!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Thanks a lot!", "Your feedback is valuable for me!", "success");
+                        }
+                        else {
+                            swal("Sorry", "Sorry for inconvenience!", "error");
+                        }
+                    });
+            }
+        </script>
+
+        <script>
+            // show/hide password
+            const visToggle = document.querySelector('.eyeIcon');
+
+            const input = document.querySelector('#pwdWrap input');
+
+            var password = true; // bullets are showing
+
+            visToggle.addEventListener('click', function () {
+                if (password) {
+                    input.setAttribute('type', 'text');
+                    visToggle.classList.remove('fa-eye');
+                    visToggle.classList.add('fa-eye-slash');
+                } else {
+                    input.setAttribute('type', 'password');
+                    visToggle.classList.remove('fa-eye-slash');
+                    visToggle.classList.add('fa-eye');
+                }
+                password = !password; // when password is false the text is showing
+            });
+
+            // help-tip
+
+            // password help-tip
+            // hide the password helper text div
+            document.querySelector('#tt').classList.add('hide');
+            // make the tooltip able to close on click
+            const tooltip = document.querySelector('.tooltip');
+            tooltip.addEventListener('click', function () {
+                document.querySelector('#tt').classList.toggle('show'); // togle the tooltip to show or hide
+                document.querySelector('#tt').classList.toggle('hide');
+            })
+
+            //city help-tip
+            // hide the helper text div
+            document.querySelector('#cty').classList.add('hide'); // hide the tooltip on page load
+            const cityTooltip = document.querySelector('.tooltip.city');
+            cityTooltip.addEventListener('click', function () {
+                document.querySelector('#cty').classList.toggle('show'); // togle the tooltip to show or hide
+                document.querySelector('#cty').classList.toggle('hide');
+            })
+
+
+            // password strength
+            var pass = document.getElementById('password');
+            pass.addEventListener('keyup', function () {
+                checkPassword(pass.value);
+            })
+            function checkPassword(password) {
+                var strengthBar = document.getElementById('strength');
+                var strength = 0; // set default strength to 0
+                if (password.match(/(?=.*\d)+/)) { // checks to see if password matches regular expression and increases strength by 1. Here we check for a number from 0-9
+                    strength += 1
+                }
+                if (password.match(/(?=.*[a-z])(?=.*[A-Z])+/)) { //We are seeing if password as a lower case from a-z, upper case from A-Z
+                    strength += 1
+                }
+                if (password.match(/(?=.*[!@#$%^&*()~<>?])+/)) { // check for funky character
+                    strength += 1
+                }
+                if (password.length > 10) { // check for at least 10 characters  
+                    strength += 1
+                }
+                switch (strength) { // run switch statement on strength
+                    case 0:
+                        strengthBar.value = 20;
+                        strengthBar.className = '';
+                        strengthBar.classList.add('pb20');
+                        break;
+                    case 1:
+                        strengthBar.value = 40;
+                        strengthBar.className = '';
+                        strengthBar.classList.add('pb40');
+                        break;
+                    case 2:
+                        strengthBar.value = 60;
+                        strengthBar.className = '';
+                        strengthBar.classList.add('pb60');
+                        break;
+                    case 3:
+                        strengthBar.value = 80;
+                        strengthBar.className = '';
+                        strengthBar.classList.add('pb80');
+                        break;
+                    case 4:
+                        strengthBar.value = 100;
+                        strengthBar.className = '';
+                        strengthBar.classList.add('pb100');
+                        break;
+                }
+            }
+
+
+        </script>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+
+</html>

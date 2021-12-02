@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="Description" content="Engineering Notes ,eBooks and Previous Year Paper" />
+    <meta name="Keywords" content="First Year Engineering Notes ,eBooks and Previous Year Paper" />
+    <link rel="canonical" href="https://www.uitians.educationhost.cloud" />
+    <meta name="author" />
+  <title>Uitians | Technical Notes | Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <script src="js/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="css/sweetalert.css" />
+  <link rel="stylesheet" href="css/04_base.css" />
+  <link rel="stylesheet" href="css/04_form.css" />
+  <meta name="description" content="Favicon" />
+  <!-- https://www.w3.org/2005/10/howto-favicon -->
+  <link rel="icon" type="image/jpeg" href="images/logo.png">
+  <!-- <title>Uitians Website for Technical Notes</title>-->
+  <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="css/login.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0HSK9V0BK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W0HSK9V0BK');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MCVF6LQ');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185348326-1">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-185348326-1');
+  </script>
+
+
+  <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+  <script>var __adobewebfontsappname__ = "dreamweaver"</script>
+  <script src="http://use.edgefonts.net/actor:n4:default;alfa-slab-one:n4:default.js" type="text/javascript"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"
+          aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+            class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="index.html"><i class="fa fa-book fa-pad"></i> Uitians | Technical Notes <i
+            class="fa fa-book fa-pad"></i></a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="topFixedNavbar1">
+        <ul class="nav navbar-nav navlist">
+          <li class="navlistitem"><a href="index.html">Home</a> </li>
+          <li class="navlistitem"><a href="about.html">About</a> </li>
+          <li class="navlistitem"><a href="services.html">Services</a> </li>
+          <li class="navlistitem"><a href="contact.php">Contact</a></li>
+        </ul>
+        <ul>
+          <li id="listitem" class="active"><a href="login.html">Log In</a></li>
+          <li id="listitem"><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <body id="loginLanding">
+    <main class="wrapper">
+      <header id="logo">
+        <h1>Uitians</h1>
+      </header>
+      <section id="sign">
+        <header>
+          <h1>Log in to your account</h1>
+        </header>
+        <article id="loginForm">
+          <form action="#" method="post">
+
+            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+
+            <input type="email" id="email" name="email" required>
+
+            <label for="password"><i class="fas fa-lock"></i> Password</label>
+            <div id="pwdWrap">
+              <input type="password" id="password" name="password" required>
+              <i class="fas fa-eye eyeIcon"></i>
+            </div>
+
+            <div>
+              <button onclick="JSalert()" type="submit" id="loginBtn">Login <i class="fas fa-angle-right"></i></button>
+            </div>
+
+            <aside>
+              <p><a href="#">Forgot your password?</a> <br> Don’t have an account? <a href="signup.html">Join Now</a>.
+              </p>
+            </aside>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer>Copyright © 2020. <a href="https://www.uitians.educationhost.cloud/" target="_blank">
+        www.uitians.educationhost.cloud</a>
+    </footer>
+
+    <script type="text/javascript">
+      function JSalert() {
+        swal({
+          title: "This functionality will be coming soon!",
+          text: "Are you happy with this site?",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "I am happy!",
+          cancelButtonText: "I am not happy!",
+          closeOnConfirm: false,
+          closeOnCancel: false
+        },
+          function (isConfirm) {
+            if (isConfirm) {
+              swal("Thanks a lot!", "Your feedback is valuable for me!", "success");
+            }
+            else {
+              swal("Sorry", "Sorry for inconvenience!", "error");
+            }
+          });
+      }
+    </script>
+
+    <script>
+
+      const visToggle = document.querySelector('.eyeIcon');
+
+      const input = document.querySelector('#pwdWrap input');
+
+      var password = true;
+
+      visToggle.addEventListener('click', function () {
+        if (password) {
+          input.setAttribute('type', 'text'); // using js dynamically changed the type attribute
+          visToggle.classList.remove('fa-eye');
+          visToggle.classList.add('fa-eye-slash');
+        } else {
+          input.setAttribute('type', 'password');
+          visToggle.classList.remove('fa-eye-slash');
+          visToggle.classList.add('fa-eye');
+        }
+        password = !password;
+      });
+
+
+    </script>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+
+</html>

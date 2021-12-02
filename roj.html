@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- views/partials/head.ejs -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, private" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+<title>Directorate of Employment,Govt of M.P.</title>
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<!-- Owl carousel -->
+<link href="/css/owl.carousel.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datepicker3.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="/css/font-awesome.css" rel="stylesheet">
+<link href="/css/captcha.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<!-- Custom Style -->
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/Carouselslide.css" rel="stylesheet">
+<link href="/css/jquery.magicsearch.css" rel="stylesheet">
+<link href="/css/croppie.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/print.min.css">
+<link href="/css/selectize.default.css" rel="stylesheet">
+<style>
+    /* .btn-access{
+        pointer-events: none; 
+    } */
+    </style>
+
+<script src="/js/jquery-2.1.4.min.js"></script> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="/js/jquery.blockUI.js"></script>
+<!-- Owl carousel > 
+<script src="/js/owl.carousel.js"></script--> 
+<script src="/js/bootstrap.min.js"></script> 
+<script src="/js/bootstrap-datepicker.js"></script> 
+
+<!-- Custom js --> 
+
+<script src="/js/js.cookie.js"></script>
+<script src="/js/jquery-lang.js"></script>
+<script src="/js/script.js"></script>
+<!-- <script src="/js/blockui.js" type="text/javascript"></script> -->
+  
+<script src="/js/global.js"></script>
+<script src="/js/TypeaHead.js"></script>
+<script src="/js/select2.min.js"></script>
+
+
+<script src="/js/toastr.min.js"></script>
+<script src="/js/aadhaarvalidation.js"></script>
+<script src="/customjs/common.js"></script>
+    
+
+<script src="/js/jquery.magicsearch.js"></script>
+<script src="/js/croppie.js"></script>
+<script src="/js/smtp.js"></script>
+<script src="../js/md5.js" type="text/javascript"></script>
+<script src="/js/printThis.js"></script>
+<script src="/js/selectize.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script type='text/javascript' src="/js/jspdf.debug.js"></script>
+<script type='text/javascript' src="/js/pagination.js"></script>
+<script type='text/javascript' src="/js/jquery.waterwheelCarousel.js"></script>
+
+<script type="text/javascript">
+    var lang = new Lang();
+    lang.dynamic('th', '/js/langpack/th.json');
+    lang.init({
+      defaultLang: 'en'
+    });
+   
+  </script>
+  
+  <script>
+    $(function(){
+    $('.rojdatepicker').datepicker({ 
+      format: "dd/mm/yyyy",
+      clearBtn: true,
+      daysOfWeekHighlighted: "0",
+      autoclose: true,
+      todayHighlight: true,
+      container: '#myModal1'
+    });
+    })
+    
+    </script>
+
+<script>
+  //  $( ".btn.btn-access" ).css('pointer-events','none')
+  // $( ".btn.btn-access" ).attr( "disabled", true );
+  $(document).ready(function() {
+    $(document).off('ajaxStart').on('ajaxStart', function(){
+                $.blockUI({ message: '<img src="images/loading.gif" style="width:50px;height:50px" />' });
+            } );
+            $(document).off('ajaxStop').on('ajaxStop', function(){
+                $.unblockUI();
+            });
+    setTimeout(function(){ if (Cookies.get("langCookie") == "th") {
+      $("#lblh").text("English");
+    }
+    else {
+      $("#lblh").text("Hindi");
+    }
+  },500);
+  
+    $('#nav-main ul > li').on('mouseenter', function() {
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+    });
+    $('#nav-main ul > li').on('click', function() {
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      if(!$(this).hasClass('dropdown')) {
+        $('#nav-main').removeClass('in');
+      }
+    });
+    $('#nav-main ul > li').on('mouseleave', function() {
+      $(this).removeClass('active');
+    });
+
+    $(document).click(function(event) {
+      if(!event) {
+        event = window.event; 
+      }
+      var source = event.target;
+      if($(source).closest('#nav-main').length == 0) {
+        $('#nav-main').removeClass('in');
+      }
+    });
+
+  });
+   function fetchNotification() {
+            jQuery.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: serverpath + "jobseekerreg/'"+sessionStorage.getItem("CandidateId")+"'",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    if ( data.jobalert_email  == "1") {
+                                      $("#emailswitch").prop("checked", true);
+                                   } else {
+                                    $("#emailswitch").prop("checked", false);
+                                        }
+                                
+                 
+                },
+                error: function (xhr) {
+                    toastr.success(xhr.d, "", "error")
+                    return true;
+                }
+            });
+        }
+</script>
+
+          
+<script>
+  $.getJSON("https://api.ipify.org?format=json", 
+                    function(data) { 
+
+  sessionStorage.ipAddress= data.ip; 
+  }) 
+</script>
+ 
+
+      
+
+
+    <style>
+        @media only screen and (max-width: 767px) {
+            .sidebar.registerNow {
+                margin-left: 17%;
+            }
+        }
+
+        .cardsimage {
+            margin-top: -11px;
+        }
+
+        .hero-wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .hero-wrapper .carousel-wrapper,
+        .hero-carousel {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+
+
+        .hero-carousel .carousel-inner,
+        .hero-carousel .item {
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-carousel img {
+            left: 0;
+            bottom: 0;
+
+            min-height: 100%;
+            max-width: none;
+            width: auto;
+            height: auto;
+        }
+
+        .hero-carousel i {
+            position: absolute;
+            top: 50%;
+        }
+
+        .carousel-fade .carousel-inner .item {
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .carousel-fade .carousel-inner .active {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-inner .active.left,
+        .carousel-fade .carousel-inner .active.right {
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .carousel-fade .carousel-inner .next.left,
+        .carousel-fade .carousel-inner .prev.right {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-control {
+            z-index: 2;
+        }
+        .registration {
+    height: 97px;
+}
+.browsejobby{
+    height: 245px;
+}
+        @media screen and (max-width: 767px){
+.registration {
+    margin-top: 30px;
+    height: 186px;
+}
+.browsejobby{
+    height: 424px;
+}
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- views/partials/header.ejs -->
+<br/>
+<div class="header">
+    <img src="images/header_name.gif" class="headerimage" alt="" style="height: 110px !important;width: 100%;max-width: 100%;"> 
+  
+    <div class="row" style="
+    height: 35px;
+    margin-top: 0px;
+">
+   
+
+      <div class="col-sm-8 col-xs-7">
+        <!-- Nav start -->
+        <div class="navbar navbar-default" role="navigation" style="float: left;position: relative;left:5%;top:-25%">        
+          <button class="navbar-toggler" id='navbar-toggle' type="button" data-toggle="collapse" data-target="#nav-main"
+  aria-controls="nav-main" aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="navbar-collapse collapse" id="nav-main">
+            <ul class="nav navbar-nav" style="width: 110%;">
+          
+              <li class="pad"><a href="/"><span lang="en">Home</span></a></li> 
+              <li class="pad dropdown"><a><span lang="en">About us</span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="/Dashboard"><span lang="en">Dashboard</span></a></li> -->
+
+                  <li><a href="/About_New"><span lang="en">About the Portal</span></a></li>
+                  
+                  <li><a href="/about"><span lang="en">About Department</span></a></li>
+                  <li><a href="/PublicPrivatePartnership"><span lang="en">Public Private Partnership(PPP)</span></a></li>
+                  <li style="display: none;"><a href="/RoleoftheDepartment" ><span lang="en">Role of the Department</span></a></li>
+                  <li><a href="/OrganizationalSetup"><span lang="en">Organizational Setup</span></a></li>
+                  <li><a href="/EmploymentOffices"><span lang="en">Employment Offices</span></a></li>
+                  <li style="display: none;"><a href="/MIS"><span lang="en">MIS</span></a></li>
+                  <li><a href="/Statistics"><span lang="en">Statistics</span></a></li>
+                  <li><a href="/RighttoInformation"> <span lang="en"> Right to Information</span></a></li>
+                  <li><a target="blank" href="http://os.mp.nic.in/aprms/publicview1.php"><span lang="en"> Property Declaration</span></a></li>
+                  <li><a href="/AdministrativeReports"><span lang="en"> Administrative Reports</span></a></li>
+                  <li><a href="/CircularOROrders"> <span lang="en">Circulars/Orders </span> </a></li>
+                  <li><a href="/InformationofDifferentlyabledPerson"> <span lang="en">Information of Differently abled Person</span> </a></li>
+                
+                                  <li><a target="blank" href="/pdf/ConversionTable.pdf"> <span lang="en">NCO Code Information</span>
+                    </a></li>
+                    <li><a href="/ActandRules"> <span lang="en">Act and Rules</span> </a></li>
+                  <li><a href="/Gallery"> <span lang="en"> Photo Gallery</span> </a></li>
+                  <li><a href="/forms"> <span lang="en">Forms</span>
+                  </a></li>
+                <li style="display: none;"><a href="/formsandfont"> <span lang="en">Download Forms/Fonts</span> </a></li>
+                <li><a href="/pdf/UM.pdf" target="blank"> <span lang="en">User Manual</span> </a></li>
+                </ul>
+              </li>
+              <li class="pad dropdown"><a><span lang="en">Help &amp; Support</span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" style="display:none"><span lang="en">Chat Support</span></a></li>
+                  <li><a href="" data-toggle="modal" data-target="#myModallmailsupport"><span lang="en">Email Support</span></a></li>
+                  <li><a data-toggle="modal" data-target="#myModallaudiosupport" href="#"><span lang="en">Audio Support</span></a></li> 
+                  <li style="display: none;"><a href="/GrievenceForm"><span lang="en">Grievance and Resolution Desk</span></a></li>
+                  <li><a href="/FeedBackForm"><span lang="en">Feedback</span></a></li>
+                  <li><a href="/JsFAQ#"><span lang="en">FAQ</span> </a></li>
+                
+                  <li style="display: none;"><a href="" data-toggle="modal" data-target="#myModalrenewforolduser"><span  lang="en">Renew Registration</span></a></li>
+                  
+                </ul>
+              </li>
+             <!-- <li class="pad"><a href="" data-toggle="modal" data-target="#myModalrenewforolduser"><span  lang="en">Renew Registration</span></a></li>
+             -->
+
+              <li class="pad"><a href="/Contactus"><span lang="en"> Contact us</span></a></li>
+              <!-- <li><a href="/FAQs">FAQ</a></li> -->
+              <li class="pad dropdown"><a><span lang="en"> Job Fairs</span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/JobFairScheme"><span lang="en">Job Fair Scheme</span></a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#jobfaircreation"><span lang="en">Job Fair Creation</span></a></li>
+               
+                </ul>
+              </li>
+              <li class="pad"><a href="/Dashboard"><span lang="en">Dashboard</span></a></li>
+            
+              <li class="pad dropdown"><a href="#"><span lang="en"> Login</span></a>
+                <ul class="dropdown-menu">
+                  <li><a data-toggle="modal" data-target="#myModallogin" href="#"><span lang="en">Jobseeker Login</span></a></li>
+                  <li><a href="#" onclick="employerurl()"><span lang="en">Employer Login</span></a></li>
+                  <!-- <li><a href="#"><span lang="en">Recruiter Login</span></a></li>
+                  <li><a href="/SDCLogin"><span lang="en">SDC Login</span></a></li> -->
+                  <li><a href="#" onclick="adminurl()"><span lang="en">OLEX Login</span></a></li>
+              <li><a href="#" onclick="adminurl()"><span lang="en">Yashaswi Login</span></a></li>
+            
+                </ul>
+              </li>
+              <li class="pad"><a id="lblh" href="#" onclick="myFunction(this)">Hindi</a></li>
+              <li style="padding: 12px 0 !important; " class='font-controller' onclick="textdecrease()"><img style="border: 1px solid black; border-right: 0; max-width: 100% !important;" src="images/text_decrease.png" alt="Text Decrease"></li>
+              <li style="padding: 12px 0 !important;" class='font-controller' onclick="textnormal()"><img style="border: 1px solid black; border-right: 0; max-width: 100% !important;" src="images/text_normal.png" alt="Text Normal"></li>
+              <li style="padding: 12px 0 !important;" class='font-controller' onclick="textincrease()"><img style="border: 1px solid black; max-width: 100% !important;" src="images/text_increase1.png" alt="Text Increase"></li>
+
+
+            </ul>
+
+
+            <!-- Nav collapes end -->
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!-- Nav end -->
+      </div>
+      <div class="col-sm-4 col-xs-5">
+          <div class="navbar navbar-default" role="navigation">
+            <li class="nav navbar-nav pad header-contact" style="margin-top:13px; font-size: small;    color: black;  font-weight: 500;">
+              <!--  <li><a href="/">Home</a></li> -->
+              <span lang="en">TOLL FREE NO:</span> -1800-5727-751 / 0755-6615100
+              <!-- <span lang="en">E-mail:</span>helpdesk[dot]mprojgar[at]mp[dot]gov[dot]in -->
+            </li>
+  <!-- <li id='whatsappnumberhelp'
+   class="nav navbar-nav pad header-contact" style="margin-top:3px; font-size: small;   color: black;  font-weight: 500;">
+
+              <span lang="en">WhatsApp Only:</span> - +917620603312
+
+            </li> -->
+
+            <li class="nav navbar-nav header-contact" style="margin-top:3px;font-size: small;color: black;font-weight: 500;position: relative;left: 11px;">
+              <span lang="en">E-mail: </span>helpdesk.mprojgar@mp.gov.in
+            </li>
+          </div>
+      <!-- row end -->
+      </div>
+    </div>
+<!-- Header container end -->
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModallmailsupport" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="userccount">
+        <div>
+
+            <button type="button" class="close" data-dismiss="modal" style="margin-top: -10px;font-size: xx-large;">×</button>
+
+
+
+          <h5 style="font-size:16px;"><span lang="en">E-mail Support </span></h5>
+          <!-- login form -->
+          <div class="formpanel">
+              <div class="row">
+                  <div class="col-md-6">
+                     <div class="formrow" style="display: none;">
+                        
+                           
+                             
+                           
+                        
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-content formpanel">
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="formrow">
+                                  <label for="example-email-input" class="col-2 col-form-label" lang="en">
+                              Name 
+                                  </label>
+                                  <input class="form-control" id="Name" lang="en" name="Comments" placeholder="Name">
+
+                                 </div>
+                          </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                          <div class="formrow">
+                                <label for="example-email-input" class="col-2 col-form-label" lang="en">
+                         Your Email
+                                </label>
+                                <input class="form-control" id="From" onfocusout="mailcheck()" name="Comments" lang="en" placeholder="Your Email">
+
+                               </div>
+                        </div>
+                  </div>
+
+                 
+
+
+                <div class="m-form__group form-group row">
+                  <label class="col-lg-3 col-form-label" lang="en">
+                    Subject-Body 
+                </label>
+                <div class="col-lg-12">
+                        <select type="text" id="SubjectBody" class="form-control m-input" lang="en" placeholder="">
+                            <option lang="en">Register</option>
+                            <option lang="en">Renewal</option>
+                            <option lang="en">Transfer</option>
+                            <option lang="en">ID Related</option>
+                            <option lang="en">Job Related</option>
+                            <option lang="en">Career Opportunities</option>
+                            <option lang="en">Career Counselling</option>
+                            <option lang="en">Other</option>
+                           
+                            
+                        </select>
+                        
+</div>
+                          </div>
+                          
+
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="formrow">
+                        <label for="example-email-input" class="col-2 col-form-label" style="padding: 6px;" lang="en">
+                 To 
+                        </label>
+                        <input type="email" class="form-control"  id="To" name="Comments" value="helpdesk.mprojgar@mp.gov.in" lang="en"  readonly="">
+
+                       </div>
+                </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+                <div class="formrow">
+                      <label for="example-email-input" class="col-2 col-form-label" lang="en">
+               Mobile 
+                      </label>
+                      <input type="number" maxlength="10" onkeypress="if (this.value.length >= 10) { return false; };" class="form-control" id="Mobile" name="Comments" lang="en" placeholder="Mobile">
+
+
+                    
+
+
+                </div>
+              </div>
+        </div>
+
+
+            <div class="row">
+               
+                    <div class="col-md-12">
+                            <div class="formrow">
+                                  <label for="example-email-input" class="col-2 col-form-label" lang="en">
+                               Problem Description
+                                  </label>
+                                  <textarea class="form-control" id="Comments" name="Comments" lang="en" placeholder="Comments"></textarea>
+                            </div>
+                          </div>
+               
+              </div>
+         
+              <div class="row">
+                  
+                     <div class="col-md-10" style="margin-left: 8%;">
+                    <input type="submit"  onclick="CheckMail(); " class="btn" value="Submit">
+               </div>
+                </div>
+                <div class="row">
+                  </div> 
+       </div>
+           
+           
+        
+           
+            
+            
+          </div>
+        </div>
+        
+
+       
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+  var lang = new Lang();
+  lang.dynamic('th', '/js/langpack/th.json');
+  lang.init({
+    defaultLang: 'en'
+  });
+  
+</script>
+
+<script>
+  $(function(){
+  $('.rojdatepicker').datepicker({ 
+    format: "dd/mm/yyyy",
+    clearBtn: true,
+    daysOfWeekHighlighted: "0",
+    autoclose: true,
+    todayHighlight: true,
+    container: '#myModal1'
+  });
+  })
+  
+  </script>
+
+<script>
+ function fetchNotification() {
+          jQuery.ajax({
+              type: "GET",
+              contentType: "application/json; charset=utf-8",
+              url: serverpath + "jobseekerreg/'"+sessionStorage.getItem("CandidateId")+"'",
+              cache: false,
+              dataType: "json",
+              success: function (data) {
+                  if ( data.jobalert_email  == "1") {
+                                    $("#emailswitch").prop("checked", true);
+                                 } else {
+                                  $("#emailswitch").prop("checked", false);
+                                      }
+                              
+               
+              },
+              error: function (xhr) {
+                  toastr.success(xhr.d, "", "error")
+                  return true;
+              }
+          });
+      }
+</script>
+
+        
+
+
+
+    
+
+
+
+<script>
+
+
+function CheckMail() {
+if (jQuery('#Name').val() == "") {
+toastr.warning("Please Enter Your Name", "", "info");
+}
+// else if (jQuery('#To').val() == "") {
+// toastr.warning("Please Enter Your To", "", "info");
+// }
+
+else if (jQuery('#From').val() == "") {
+toastr.warning("Please Enter Your Email", "", "info");
+}
+
+else if (jQuery('#SubjectBody').val() == "") {
+toastr.warning("Please Enter Your SubjectBody", "", "info");
+}
+
+else if (jQuery('#Mobile').val() == "") {
+toastr.warning("Please Enter Your Phone No", "", "info");
+}
+else if (jQuery('#Comments').val() == "") {
+toastr.warning("Please Enter Comments", "", "info");
+}
+
+
+else {
+sendemail();
+}
+
+
+};
+
+
+function sendemail(){
+ var sub = "Mp Rojgar";
+var body = `<div style='font-size:14px;color:darkgreen'>
+              Dear, 
+              </div>
+              </br>
+              <div style='font-size:13px;'>
+              To : ${$("#To").val()} 
+             
+              </div>
+             
+              <div style='font-size:13px;'> 
+              From : ${$("#From").val()} 
+              
+              </div>
+            
+              <div style='font-size:13px;'>
+              Mobile :  ${$("#Mobile").val()}
+              </div>
+              
+              <div style='font-size:13px;'> Subject-Body : ${$("#SubjectBody").val()}
+               <br>
+               </div>
+               <br>
+               <div style='font-size:13px;'>
+               Problem : ${$("#Comments").val()}
+                <br>
+                </div>`;
+
+sentmailglobal(""+$("#To").val()+","+$("#From").val()+"",body,sub) ;
+toastr.success("Submit Successful", "", "success")
+jQuery("#Name").val("");
+$("#From").val("");
+$("#Mobile").val("");
+$("#SubjectBody").val("Register");
+jQuery("#Comments").val("")
+
+return true;
+}
+
+
+
+//  function resetMode(){
+// 	jQuery("#Name").val("");
+// 	jQuery("#E-Mail").val("");
+// 	$("#Mobile").val("");
+// 	jQuery("#Comments").val("")
+
+
+// }
+
+function mailcheck(){
+
+var Mail;
+Mail = jQuery('#E-Mail').val();
+
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+if (reg.test(Mail) == false) {
+$(window).scrollTop(0);
+toastr.warning("Please Enter Correct E-MailId", "", "info");
+jQuery('#E-Mail').css('border-color', 'red');
+return true;
+}
+else {
+jQuery('#E-Mail').css('border-color', '');
+
+}
+
+}
+   $(document).ready(function () {
+   
+    });
+   </script> 
+
+<div class="modal fade" id="myModallaudiosupport" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="userccount">
+              <div>
+                <h5 style="font-size:16px;"><span lang="en">  Audio Support </span></h5>
+                <!-- login form -->
+                <div class="formpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                           <div class="formrow" style="display: none;">
+                              
+                                 
+                                   
+                                 
+                              
+                           </div>
+                        </div>
+                     </div>
+                 
+                 
+                 <h4><span lang="en">TOLL FREE NO:</span>-1800-5727-751</h4>
+              
+                 
+                  
+                  
+                </div>
+              </div>
+             
+    
+             
+    
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+
+
+<script type="text/javascript">
+  var lang = new Lang();
+  lang.dynamic('th', '/js/langpack/th.json');
+  lang.init({
+    defaultLang: 'en'
+  });
+  
+</script>
+
+<script>
+  $(function(){
+  $('.rojdatepicker').datepicker({ 
+    format: "dd/mm/yyyy",
+    clearBtn: true,
+    daysOfWeekHighlighted: "0",
+    autoclose: true,
+    todayHighlight: true,
+    container: '#myModal1'
+  });
+  })
+  
+  </script>
+
+<script>
+ function fetchNotification() {
+          jQuery.ajax({
+              type: "GET",
+              contentType: "application/json; charset=utf-8",
+              url: serverpath + "jobseekerreg/'"+sessionStorage.getItem("CandidateId")+"'",
+              cache: false,
+              dataType: "json",
+              success: function (data) {
+                  if ( data.jobalert_email  == "1") {
+                                    $("#emailswitch").prop("checked", true);
+                                 } else {
+                                  $("#emailswitch").prop("checked", false);
+                                      }
+                              
+               
+              },
+              error: function (xhr) {
+                  toastr.success(xhr.d, "", "error")
+                  return true;
+              }
+          });
+      }
+</script>
+
+        
+
+
+
+    
+
+
+    
+<div class="modal fade" id="myModallogin" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="userccount">
+          <div>
+            <h5 style="font-size:16px;display: flex;justify-content: center;"><span lang="en">  Job Seeker Login </span></h5>
+            <!-- login form -->
+            <div class="formpanel">
+              <div class="row">
+                <div style="float:left"><span><a href="/forgot" style="font-size:13px;color: #FC9928;"><span lang="en">Forgot Password?</span></a></span></div>
+                <div style="float:right"><i class="fa fa-user" aria-hidden="true"></i> <span style="font-size:14px;"><span lang="en">New User?</span></span> <a href="/JobSeekerRegistration" style="font-size:13px;color: #FC9928;"><span lang="en">Register Here</span></a></div>
+              </div>
+            <br>
+            <br>
+                <div class="row">
+                    <div class="col-md-6">
+                       <div class="formrow" id="invalidCheck" style="display: none;">
+                          
+                             
+                                <strong><span style="font-size: 11px; color: #cc0033">Invalid User Id or Password
+                                   </span></strong>
+                             
+                          
+                       </div>
+                    </div>
+                 </div>
+              <div class="formrow" style="    min-height: 49px;">
+                <input type="text" id="txtlogin" onfocusout="getvalidated('txtlogin','text','User Name')" onkeypress="jQuery('#invalidCheck').hide();" class="form-control" placeholder="User Name">
+                <span id="validtxtlogin" style="font-size: 11px; color: #cc0033; "></span>
+               
+               </div>
+              
+              <div class="formrow">
+                <input type="password" id="txtpassword" onfocusout="getvalidated('txtpassword','text','Password')" onkeypress="jQuery('#invalidCheck').hide();" class="form-control" placeholder="Password">
+                <span id="validtxtpassword" style="font-size: 11px; color: #cc0033; "></span>
+                <!-- <span class="info-icon-reg" data-toggle="tooltip" data-balloon-length="xlarge" data-placement="right" title="" data-html="true" data-original-title="<br><h6> <span lang='en'>Password must contain the following:</span> </h6>  <ul class='categories'><li><span lang='en'>Atleast one letter</span></li><li><span lang='en'>Atleast one number</span></li><li><span lang='en'>Length must be min. 8</span></li></ul>"><i class="fa fa-info-circle" aria-hidden="true"></i></span> -->
+                <span class="info-icon-reg" data-toggle="tooltip" data-balloon-length="xlarge"
+                data-placement="bottom"
+                title="<br><h6> <span lang='en'> Password must contain<br> the following:</span> </h6>  <ul class='categories'><li><span lang='en'> Atleast one letter</span> </li><li><span lang='en'> Atleast one number</span> </li><li> <span lang='en'> Not to use special character</span> </li><li> <span lang='en'>Length must be min. 8</span> </li></ul>"
+                data-html="true" style="margin-right: 12px;"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span toggle="#txtpassword"  class="fa fa-fw fa-eye field-icon toggle-password" style="margin-right: 35px;"></span> 
+               
+              </div>
+             
+              <!-- START CAPTCHA -->
+              <div class="row">
+                <tr>
+                  <td style="text-align: left">
+                    <strong><span style="font-size: 15px;color: #cc0033;text-align: center;display: block;" lang="en">Please Enter The Text Below In Text Box</span></strong></td>
+                </tr>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="formrow" style="display: flex;align-self: center;justify-content: center;">
+                    <div id="captchaheader" style='display: inline-block;'><canvas id="captchaheader" width="100" height="50"></canvas></div>
+                    <a onclick="createcaptchaheader()" style="position: relative; top: 8px" ><i class="fa fa-refresh" style="font-size:24px;"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="display:block">
+                <div class="col-12">
+                  <input type="text" placeholder="Captcha" onfocusout="getvalidated('cpatchaTextBoxheader','text','Captcha')" id="cpatchaTextBoxheader" style='display:block;margin:auto'/>
+                </div>
+               </div>
+               <div class='row'>
+                <div class="col-12">
+                  <span id="validcpatchaTextBoxheader" style="display:block;font-size: 11px; color: #cc0033; margin:auto; position:relative;top:8px;width:50%;text-align: center;"></span>
+                </div>
+               </div>
+              <div class="formrow" style="display:block; margin-top: 10px;">
+
+                <input type="button" onclick="CheckValidationHome()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="" title="valid password" id="homelogin" class="btn" value="Login">
+
+              </div>
+            </div>
+          </div>
+      
+  
+  
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  
+  </div>
+  </div>
+
+  <div class="modal fade" id="myModalrenewforolduser" style="overflow: auto !important;" role="dialog" tabindex="-1"
+  aria-hidden="true">
+  <div class="modal-dialog"  role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+
+      <div class="userccount">
+
+        <h5 style="font-size:16px;" lang="en">Renew Registration </h5>
+        <div class="modal-body" id="modalbody">
+          <div class="job-header">
+            <div class="jobdetail">
+           
+              <div class="formpanel">
+                <div class='row'>
+                  <div class='col-md-6 col-xs-6' lang="en">Registration Number</div>
+                  </div>
+               
+            <br>
+        
+              <div class='row'>
+                <div class='col-md-6 col-xs-6' ><span style="font-size:11px;color:#cc0033" id="messagerenew"></div>
+                </div>
+      
+            <div class="formrow" style="    min-height: 49px;">
+              <input type="text" id="userregnumber"   class="form-control" placeholder="Registration Number">
+              <span id="validuserregnumber" style="font-size: 11px; color: #cc0033; " ></span>
+             
+             </div>
+                <br>
+                <div class="formrow" style="display:block; margin-top: 10px;">
+
+                  <span id="nextrenwDate" style="font-size: 16px;color: blue"></span>
+                </div>
+                <br>
+              <div class="formrow" style="display:block; margin-top: 10px;">
+
+                <input type="button" onclick="renewRegistration()"  class="btn" id="olduserrenewbtn" value="Renew Registration">
+
+              </div>
+              
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closerenewModal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModalprintforolduser" style="overflow: auto !important;" role="dialog" tabindex="-1"
+  aria-hidden="true">
+  <div class="modal-dialog"  role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+
+      <div class="userccount">
+
+        <h5 style="font-size:16px;" lang="en">Print Registration </h5>
+        <div class="modal-body" >
+          <div class="job-header">
+            <div class="jobdetail">
+           
+              <div class="formpanel">
+                <div class='row'>
+                  <div class='col-md-6 col-xs-6' lang="en">Registration Number</div>
+                  </div>
+               
+            <br>
+        
+              <div class='row'>
+                <div class='col-md-6 col-xs-6' ><span style="font-size:11px;color:#cc0033" id="messageprint"></div>
+                </div>
+      
+            <div class="formrow" style="    min-height: 49px;">
+              <input type="text" id="userregnumberprint"   class="form-control" placeholder="Registration Number">
+              <span id="validuserregnumberprint" style="font-size: 11px; color: #cc0033; " ></span>
+             
+             </div>
+                <br>
+             
+              
+           
+              <div class="formrow" style="display:block; margin-top: 10px;">
+
+                <input type="button" onclick="PrintUserRegCard()" id="printuserregbtn" class="btn" value="Print Registration">
+
+              </div>
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closerenewModal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="jobfaircreation" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="userccount">
+          <div>
+            <h5 style="font-size:16px;"><span lang="en">Job Fair Creation</span></h5>
+            <!-- login form -->
+            <div class="formpanel">
+            
+              <div class="formrow" >
+               <a style="cursor: pointer;" onclick="adminurl()">Collectorate</a>
+               </div>
+              
+              <div class="formrow">
+                <a style="cursor: pointer;" onclick="adminurl()">Employment Exchange</a>
+                </div>
+                <div class="formrow" >
+                  <a style="cursor: pointer;" onclick="adminurl()">ITI</a>
+                  </div>
+                 
+                 <div class="formrow">
+                   <a style="cursor: pointer;" onclick="adminurl()">Yashaswi</a>
+                   </div>
+                   <div class="formrow">
+                    <a style="cursor: pointer;" onclick="employerurl()">Employer</a>
+                    </div>
+              
+         
+
+              
+            </div>
+          </div>
+            <br><br>
+
+           
+        </div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="modal fade bd-example-modal-lg" id="myModalLatestUpdates" style="overflow: auto !important;" role="dialog" tabindex="-1"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg"  role="document" style="width: 745px;">
+  
+    <div class="modal-content">
+
+      <div class="userccount">
+        <button type="button" class="close" data-dismiss="modal" style="margin-top: -10px;font-size: xx-large;">×</button>
+
+        <h5 style="font-size:16px;" lang="en">LATEST NOTIFICATION </h5>
+        <div class="modal-body" style="margin-bottom: -50px;">
+          <div class="job-header">
+           <div id="1" style="display :none;">
+            <!-- <a href="#"> <img id="1" style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/NoticeFinal-2(1).jpg"></a> -->
+           <a target="blank" href="http://mprojgar.gov.in/images/NoticeFinal-2(1).jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/NoticeFinal-2(1).jpg" ></a>
+           </div>
+           
+           <div id="2" style="display :none;"> 
+           <a target="blank" href="http://mprojgar.gov.in/images/JD_page-0001.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/JD_page-0001.jpg" ></a>
+           <a target="blank" href="http://mprojgar.gov.in/images/JD_page-0002.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/JD_page-0002.jpg" ></a>
+           <a target="blank" href="http://mprojgar.gov.in/images/JD_page-0003.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/JD_page-0003.jpg" ></a>
+          </div>
+		  
+		  <div id="3" style="display :none;"> 
+           <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0001.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0001.jpg" ></a>
+           <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0002.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0002.jpg" ></a>
+           <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0003.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0003.jpg" ></a>
+		   <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0004.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0004.jpg" ></a>
+		   <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0005.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0005.jpg" ></a>
+		   <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0006.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0006.jpg" ></a>
+		   <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0007.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0007.jpg" ></a>
+		   <a target="blank" href="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0008.jpg"> <img  style="max-width: 100%;width: 650px;height: 600px;" src="http://mprojgar.gov.in/images/Notification-SBI-Apprentice-Posts_page-0008.jpg" ></a>
+          </div>
+		  
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="closerenewModal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var lang = new Lang();
+  lang.dynamic('th', '/js/langpack/th.json');
+  lang.init({
+    defaultLang: 'en'
+  });
+  
+</script>
+
+<script>
+  $(function(){
+  $('.rojdatepicker').datepicker({ 
+    format: "dd/mm/yyyy",
+    clearBtn: true,
+    daysOfWeekHighlighted: "0",
+    autoclose: true,
+    todayHighlight: true,
+    container: '#myModal1'
+  });
+  })
+  
+  </script>
+
+<script>
+      $('[data-toggle="tooltip"]').tooltip(); 
+
+    function PrintRegCard(){
+      window.location = "/PrintRegistrationcard";
+    }
+  function renewRegistration() {
+if($('#userregnumber').val()==""){
+  toastr.warning("Please enter Registration Number", "", "info")
+    return false;
+}
+else{
+$('#olduserrenewbtn').attr('disabled',true)
+var MasterData = {
+    
+
+    "p_RegistrationId": $('#userregnumber').val()
+};
+MasterData = JSON.stringify(MasterData)
+var path = serverpath + "registration_renewforolduser";
+ajaxpost(path, 'parsrdatarenewRegistration', 'comment', MasterData, 'control');
+}
+}
+function parsrdatarenewRegistration(data) {
+data = JSON.parse(data)
+$.unblockUI();
+$('#olduserrenewbtn').attr('disabled',false);
+if(data.errno) {
+    toastr.warning("Something went wrong Please try again later ", "", "info")
+    return false;
+}
+else if(data[0][0].ReturnValue=='1'){
+  if(data[0][0].renewal_date){
+    $('#nextrenwDate').text('Your next renew date is ' + data[0][0].renewal_date);
+    $('#messagerenew').text("Renew Registration is not available");
+    sessionStorage.CandidateId=data[0][0].CandidateId;
+  }
+  else{
+    $('#nextrenwDate').text("");
+$('#messagerenew').text("You are not registered");
+  }
+
+}
+else{
+  $('#messagerenew').text("");
+  $('#nextrenwDate').text('Your next renew date is ' + data[0][0].renewal_date_new);
+    toastr.success("Renew Registration Successfully", "", "success");
+}
+
+
+
+}
+  
+ function fetchNotification() {
+          jQuery.ajax({
+              type: "GET",
+              contentType: "application/json; charset=utf-8",
+              url: serverpath + "jobseekerreg/'"+sessionStorage.getItem("CandidateId")+"'",
+              cache: false,
+              dataType: "json",
+              success: function (data) {
+                  if ( data.jobalert_email  == "1") {
+                                    $("#emailswitch").prop("checked", true);
+                                 } else {
+                                  $("#emailswitch").prop("checked", false);
+                                      }
+                              
+               
+              },
+              error: function (xhr) {
+                  toastr.success(xhr.d, "", "error")
+                  return true;
+              }
+          });
+      }
+</script>
+
+        
+
+
+
+    
+
+
+<script src="../customjs/JobSeekerLogin.js"></script>
+<script type="text/javascript">
+ $(document).keypress(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+    if(!$('#homelogin').prop('disabled')){
+      CheckValidationHome();
+       }
+  
+  }
+ 
+});
+</script>
+
+<div class="modal fade" id="Modalworkarea" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="userccount">
+          <div>
+            <h5 style="font-size:16px;"><span lang="en">  Help Line Number : 0755-2767927 </span></h5>
+            <!-- login form -->
+            <div class="formpanel">
+            
+              <div class="formrow">
+               <input type="radio" id="admin" value="1" name="OLEX"> Admin
+               </div>
+              
+              <div class="formrow">
+               <input type="radio" id="olex" value="2" checked="" name="OLEX"> OLEX
+                </div>
+             
+              
+         
+                <div class="formrow">
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-4">
+              <div class="formrow" style="display:block;width: 30%;position: absolute;">
+                <a target="_blank" onclick="adminurl()"><button type="button" id="okhome" class="btn" value="GO" style="margin-top: -22px;width: 81px;height: 39px;">GO</button></a>
+              </div>
+            </div>
+            </div>
+              
+            </div>
+          </div>
+         
+
+           
+        </div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Header end -->
+
+
+  </div>
+<br/>
+<!-- Modal -->
+
+
+<div class="modal fade" id="myModallaudiosupport" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="userccount">
+                <div>
+                  <h5 style="font-size:16px;"><span lang="en">Audio:Support </span></h5>
+                  <!-- login form -->
+                  <div class="formpanel">
+                      <div class="row">
+                          <div class="col-md-6">
+                             <div class="formrow" style="display: none;">
+                                <tr>
+                                   <td align="left">
+                                     
+                                   </td>
+                                </tr>
+                             </div>
+                          </div>
+                       </div>
+                   
+                   
+                   <h4> TOLL FREE NO: -1800-5727-751</h4>
+                
+                   
+                    
+                    
+                  </div>
+                </div>
+                  <br><br>
+      
+               
+      
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+
+<div class="modal fade" id="Modalworkarea" data-keyboard="false" data-backdrop="static" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="userccount">
+            <div>
+              <h5 style="font-size:16px;"><span lang="en">  Help Line Number : 0755-2767927 </span></h5>
+              <!-- login form -->
+              <div class="formpanel">
+              
+                <div class="formrow" >
+                 <input type="radio" id="admin" value="1" name="OLEX"> Admin
+                 </div>
+                
+                <div class="formrow">
+                 <input type="radio" id="olex" value="2" checked name="OLEX"> OLEX
+                  </div>
+               
+                
+           
+                  <div class="formrow">
+                      <div class="col-md-8">
+                      </div>
+                      <div class="col-md-4">
+                <div class="formrow" style="display:block;width: 30%;position: absolute;">
+                  <a target="_blank" onclick="adminurl()"><button type="button"   id="okhome" class="btn" value="GO"  style="width: 147%;margin-top: -43% ">GO hh</button></a>
+                </div>
+              </div>
+              </div>
+                
+              </div>
+            </div>
+              <br><br>
+  
+             
+          </div>
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  
+<!-- Header end -->
+
+
+    </header>
+
+    <div class="searchwrap" style="padding: 0 !important;">
+        <div class="container" style="width: 100%;">
+            <div class="row" style="margin-top: 17px;">
+                <div class="col-md-8 col-sm-6" style="left:6px">
+                    <div class="sidebar" style="height: 330px;">
+                        <div class="hero-wrapper">
+                            <div class="carousel-wrapper" id="imagecarousel" style="height: 105% !important;">
+                                <div id="hero-carousel" class="carousel hero-carousel slide carousel-fade">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#hero-carousel" data-slide-to="1" class=""></li>
+                                        <li data-target="#hero-carousel" data-slide-to="2" class=""></li>
+                                        <li data-target="#hero-carousel" data-slide-to="3" class=""></li>
+                                        <li data-target="#hero-carousel" data-slide-to="4" class=""></li>
+                                    </ol>
+                                    <div class="carousel-inner" style="margin-top: -8px;
+                                    width: 102%;
+                                    margin-left: -1%;   ">
+                                        <div class="item active">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/00.jpg">
+
+                                        </div>
+                                        <!-- <div class="item">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/05.jpg">
+
+                                        </div> -->
+
+                                        <div class="item">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/07.jpg">
+
+                                        </div>
+                                        <div class="item">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/09.jpg">
+
+                                        </div>
+                                        <div class="item">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/image2.jpg">
+
+                                        </div>
+                                        <div class="item">
+                                            <img style="max-width: 100%;width: 1142px;height: 283px;"
+                                                src="../images/image4.jpeg">
+
+                                        </div>
+                                        <a class="left carousel-control" href="#hero-carousel" data-slide="prev">
+                                            <i class="fa fa-chevron-left left"></i>
+                                        </a>
+                                        <a class="right carousel-control" href="#hero-carousel" data-slide="next">
+                                            <i class="fa fa-chevron-right right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="searchbar row" style="
+                    margin-left: 0%;
+                    padding: 0;
+                    margin-top: 13px;
+                ">
+
+                        <div class="col-md-3">
+                            <input type="text" id="Sector" class="form-control" style="width: 100%;max-height: 50px; " placeholder="&nbsp;&nbsp;&nbsp; Enter Sector">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="Qualification" class="form-control" style="
+                                width: 100%;
+                                max-height: 50px;
+                                /* margin-left: 4%; */
+                                " placeholder="&nbsp;&nbsp;&nbsp; Enter Qualification">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="Location" class="form-control" style="
+                            width: 100%;
+                            max-height: 50px;
+                            /* margin-left: 8%; */
+                            " placeholder="&nbsp;&nbsp;&nbsp; Enter Location">
+                        </div>
+                        <div class="col-md-3" style="text-align: right;/* width: 24%; *//* margin-left:-5px; */">
+                            <input type="submit" id="searchJob" style="background: #87551d;/* margin-left:16%; */width: 99%;" onclick="checksearchJob()" class="btn" value="Search Job">
+                        </div>
+                        <!-- <div class="col-md-3" style="text-align: right;width: 30%;">
+                            <input type="submit"  style=" background: #1d10e2;   width: 205px;"
+                            data-toggle="modal" data-target="#myModalrenewforolduser" class="btn" value="Renew Registration">
+                        </div> 
+                        <div class="col-md-3" style="text-align: right;width: 35%;"> 
+                               <input type="submit" style=" background: #1d10e2;   width: 247px;"
+                          onclick="window.location='/KnowRegistration'"  class="btn" value="Know Your Registration">
+                        </div>
+                        <div class="col-md-3" style="text-align: right;width: 30%;">
+                            <input type="submit" style=" background: #1d10e2;   width: 205px;"
+                            data-toggle="modal" data-target="#myModalprintforolduser"  class="btn" value="Print Registration">
+                        </div>  -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="left:-5px">
+
+                    <!-- <div class="sidebar" style="height: 170px;">
+                        <div style="text-align: center;border-bottom: 1px solid #eee;">
+                            <a href="/Login" style="   width: 100% ;margin-top: 0px;">
+                              <input type="submit" style=" background: #87551d;
+                                    width: 100%;
+                                    color: white;
+                                    font-weight: 900;
+                                    font-size: 15px;"
+                                   class="btn" value="JOB FAIRS">
+                              
+                            </a>
+                        </div> 
+                        <marquee direction="up" id="jobfairs" scrollamount="2" style="height: 101px;"
+                            onmouseover="this.stop();" onmouseout="this.start();"></marquee>
+                    </div> -->
+                    <style>
+                        .blinking {
+                            animation: blinkingText 0.8s infinite;
+                            background-color: yellow;
+                            border-radius: 25%;
+                            border-color: black;
+                            border-width: medium;
+                            padding: 2px;
+                        }
+
+                        @keyframes blinkingText {
+                            0% {
+                                color: red;
+                            }
+
+                            49% {
+                                color: red;
+                            }
+
+                            50% {
+                                color: red;
+                            }
+
+                            99% {
+                                color: blue;
+                            }
+
+                            100% {
+                                color: blue;
+                            }
+
+                        }
+                    </style>
+                    <div class="sidebar" style="height: 285px;">
+                        <div>
+                            <input type="submit" style=" background: #87551d;
+                                    width: 100%;
+                                    color: white;
+                                    font-weight: 900;
+                                    font-size: 15px;
+                                    margin-left: -10px;width: 105%;
+        margin-top: -8px;" class="btn" value=" LATEST NOTIFICATION">
+                        </div>
+                        <marquee direction="up" scrollamount="2" style="height: 224px;" onmouseover="this.stop();"
+                            onmouseout="this.start();" id="latestnotification">
+                            <!-- <a href="" id="11">
+                                <p data-toggle="modal" data-target="#myModalLatestUpdates"> ITI में प्रवेश हेतु
+                                    रजिस्ट्रेशन की तिथि दिनांक 03/11/2020 से 15/11/2020 तक बढ़ाये जाने बाबत </p>
+                            </a> -->
+                            <a href="" id="22">
+                                <p data-toggle="modal" data-target="#myModalLatestUpdates"> Urgent Requirement of ITI
+                                    Candidates in Production / Quality / Maintenance department in Pithampur Indore </p>
+                            </a>
+                            <a href="" id="33">
+                                <p data-toggle="modal" data-target="#myModalLatestUpdates"> Notification SBI Apprentice
+                                    Posts (8500) </p>
+                            </a>
+<!-- <a href="https://app.powerbi.com/view?r=eyJrIjoiNjBhNTc0MWUtMDQ5OS00YTRiLTg1MGUtNDgxOGZkZWYzZTE3IiwidCI6IjYzMzI3N2ExLTFmMDctNGU5Mi04MDQwLWNiOGNkYmQ2NTQxNCJ9&pageName=ReportSection6afc268c35498536796b" target="_blank" ><p >MP Rojgar Statistical analysis</p></a> -->
+
+                            <br>
+                        </marquee>
+
+
+                    </div>
+
+
+                    <div class="sidebar registration" >
+
+
+                        <!-- <a href="/Login" style="   width: 100% ;margin-top: 0px;">
+                                <input type="submit" style=" background: #87551d;
+                                      width: 100%;
+                                      color: white;
+                                      font-weight: 900;
+                                      font-size: 15px;"
+                                     class="btn" value="JOB FAIRS">
+                                
+                              </a>
+                             -->
+                             <div class="row">
+                        <div class="col-lg-6" style="top:-8px;" >
+
+                            <input type="submit" style="    background: #87551d;
+                            width: 100%;
+                            color: white;
+                            font-weight: 600;
+                            font-size: smaller;
+                            " class="btn" onclick="redirectoEmployer()" value="SUBMIT ER I FORM">
+
+
+                            <div class="clear" style=" padding: 5px;"></div>
+                          
+                        </div>
+                        <div class="col-lg-6" style="top:-8px; left:-1px; ">
+                            <input type="submit" style="     background: #87551d;
+                            width: 100%;
+                            color: white;
+                            font-weight: 600;
+                            font-size: smaller;" data-toggle="modal"
+                                data-target="#myModalrenewforolduser" class="btn" value="RENEW REGISTRATION">
+                                <div class="clear" style=" padding: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6" style="top:-8px;">
+                            <input type="submit" style="background: #87551d;
+                            width: 100%;
+                            color: white;
+                            font-weight: 600;
+                            font-size: smaller;
+                            " data-toggle="modal" data-target="#myModalprintforolduser" class="btn"
+                            value="PRINT REGISTRATION">
+                            <div class="clear" style=" padding: 5px;"></div>
+                       </div>
+                        <div class="col-lg-6" style="top:-8px; left:-1px; ">
+                        
+                            <input type="submit" style="    background: #87551d;
+                            width: 100%;
+                            color: white;
+                            font-weight: 600;
+                            font-size: smaller;" onclick="window.location='/KnowRegistration'"
+                                class="btn" value="
+                         KNOW YOUR REGISTRATION">
+                        </div>
+                    </div>
+                        <!-- <div style="text-align: center;border-bottom: 1px solid #eee;">
+                                <a style="margin-top: -10px;">
+                                    <h3><span style="color:#FC9928;font-size: 17px;" lang="en">Employer Feedback</span>
+                                    </h3>
+                                </a>
+                            </div>
+                            <marquee direction="up" scrollamount="2" style="height: 101px;" onmouseover="this.stop();"
+                                onmouseout="this.start();"> We value the resumes sourced through this channel. It provides
+                                relevant and accurate matches as per our job requirements.-<p><img style="width:12%;" src=''
+                                        class='yatmlogo' id="employerfeedback" /></p>
+                            </marquee> -->
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- button start -->
+            <!-- button end -->
+
+        </div>
+    </div>
+
+    <!-- Search End -->
+    <div class="col-md-12" style="background-color: #FC9928;z-index: 1;">
+        <div class="container" style="margin-top: 15px;margin-bottom: 5px;width: 95%;">
+            <div class="newsSection">
+                <marquee behavior="scroll" direction="left" id="scroll_news" style="padding-top: 5px;color: white;"
+                    onmouseover="this.stop();" onmouseout="this.start();">
+                    <h5><span lang="en" id="noteindex"></span></h5>
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="appwraper">
+        <div class="container">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-md-3">
+                    <div class="sidebar" style="display:none;">
+
+                        <div style="text-align: center;">
+                            <a href="/WalkIn">
+                                <h3 class="blink"><span lang="en">Walk-in</span></h3>
+                            </a>
+                        </div>
+                        <!-- <ul class="categories">
+                            <li><a href="/CouncellerAccess"><span lang="en">Counseller Access</span></a></li>
+                         </ul> -->
+                    </div>
+                    <div class="sidebar">
+                        <h6 style="color:#FC9928;"><span lang="en">Counselling</span></h6>
+
+                        <ul class="categories">
+                            <li><a href="/CouncellerAccess"><span lang="en">Access a Counsellor</span></a></li>
+
+                            <li><a href="/CareerCounsellingForm"><span lang="en">Counselling Form</span></a></li>
+
+
+                        </ul>
+                        <h6 style="color:#FC9928;"><span lang="en"> Career Literature</span></h6>
+
+                        <ul class="categories">
+                            <!-- <li><a target="blank" href="https://www.ncs.gov.in/content-repository/hi-in/Pages/Main.aspx"><span lang="en"> Company Secretary</span></a></li> -->
+                            <li><a target="blank"
+                                    href="https://www.ncs.gov.in/content-repository/pages/BrowseBySectors.aspx"> <span
+                                        lang="en"> Career Information </span></a></li>
+
+
+
+                            <li><a target="blank" href="" data-toggle="modal" data-target="#myModallmailsupport">
+                                    <span lang="en"> Career Guidance </span></a></li>
+                        </ul>
+                        <h6 style="color:#FC9928;"> <span lang="en"> Competitive Exams at Glance </span> </h6>
+
+                        <ul class="categories">
+                            <li><a href="https://www.upsc.gov.in/examinations/exam-calendar" target="_blank"> <span
+                                        lang="en">Union Public Service Commission </span> </a></li>
+                            <li><a href="http://www.mppsc.nic.in/Examination_plan.html" target="_blank"> <span
+                                        lang="en">MP Public Service Commission
+                                    </span> </a></li>
+                            <li style="display: none;"><a href="#."> <span lang="en">Staff Selection Commission
+                                    </span> </a></li>
+                        </ul>
+                        <h6 style="color:#FC9928;"><span lang="en">Employer Feedback</span></h6>
+
+                        <ul class="categories">
+                            <marquee direction="up" scrollamount="2" style="height: 101px;" onmouseover="this.stop();"
+                                onmouseout="this.start();"> We value the resumes sourced through this channel. It
+                                provides
+                                relevant and accurate matches as per our job requirements.-<p><img style="width:12%;"
+                                        src='' class='yatmlogo' id="employerfeedback" /></p>
+                            </marquee>
+                        </ul>
+                        <!-- <h6 style="color:#FC9928;"><span lang="en">Job Opportunities</span></h6>
+
+                        <ul class="categories">
+                            <li style="display:none"><a target="black" href="http://vacancy.mprojgar.gov.in/"><span
+                                        lang="en">Vacancy Advertisement Portal</span></a></li>
+                            <li><a href="/JobFairScheme"><span lang="en">Job Fairs</span></a></li>
+                        </ul> -->
+
+                        <h6 style="color:#FC9928;display: none;"><span lang="en">Self Employment</span> </h6>
+                        <ul class="categories">
+                            <li style="display: none;"><a target="black"
+                                    href="https://mpmsme.gov.in/website/self-employment-schemes"
+                                    style="display: none;"><span lang="en">Self Employment scheme</span></a></li>
+                        </ul>
+                        <h6 style="color:#FC9928;display: none;"><span lang="en">Career Counselling</span> </h6>
+                        <ul style="display: none;" class="categories">
+                            <li><a target="black" href="/CareerCounsellingDetails"><span lang="en">Career Counselling
+                                        Details</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar" style="height: 350px;">
+                        <p style="text-align: center;"><img src="/images/ncs.jpg" style="height: 95px;width:95%"></p>
+                        <h6 style="color:#FC9928;"><span lang="en"> For Job Seeker</span></h6>
+
+                        <ul class="categories">
+                            <li><a target="_blank" href="https://www.ncs.gov.in/job-seeker/Pages/default.aspx"><span
+                                        lang="en">Login Here</span></a></li>
+                            <li><a target="_blank" href="/pdf/NSC_Jobseeker_Registration_Manual.pdf"><span
+                                        lang="en">User Manual</span></a></li>
+                            <li><a href="https://www.ncs.gov.in/job-seeker/Pages/default.aspx"> <span lang="en">
+                                        NCS For Jobseeker </span>
+                                </a></li>
+
+                        </ul>
+                        <h6 style="color:#FC9928;"> <span lang="en">For Employer</span></h6>
+
+                        <ul class="categories">
+                            <li><a target="_blank" href="https://www.ncs.gov.in/employer/Pages/default.aspx"><span
+                                        lang="en">Login Here</span></a></li>
+                            <li><a a="" target="_blank" href="/pdf/Employer.pdf"><span lang="en">NCS For Employer
+                                    </span></a></li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <div class="sidebar" style="border: aliceblue;display: inline-block; width:100%">
+                            <div class="formpanel" style="margin-top: 0px !important">
+                                <p style="color: black;     text-align: center;font-size: large;    font-weight: 600;">
+                                    <span lang="en"> Job Seeker</span>
+                                </p>
+                                <p style="color: black;    text-align: center;font-size: large;    font-weight: 600;">
+                                    <span lang="en"> New to this Portal </span></p>
+                                <a class="btn" href="/JobSeekerRegistration" value="RegisterNow"> <span
+                                        lang="en">Register Now </span></a>
+                                </br>
+                                </br>
+                                <p style="color: black;          text-align: center; font-size: large;  font-weight: 600;"
+                                    lang="en">-----Or-----
+                                </p>
+                                <p style="text-align: center;"><a href="#" data-toggle="modal"
+                                        data-target="#myModallogin" style=" font-size: large; color: #FC9928;"> <span
+                                            lang="en">Login Here</span></a>
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="sidebar" style="border: aliceblue;height: 100%;display: inline-block;width:100%">
+                            <div class="formpanel" style="margin-top: 0px !important">
+                                <p style="color: black;     text-align: center;font-size: large;    font-weight: 600;">
+                                    <span lang="en">Employer</span>
+                                </p>
+                                <p style="color: black;    text-align: center;font-size: large;    font-weight: 600;">
+                                    <span lang="en"> New to this Portal</span></p>
+                                <a class="btn btn-access" target="_blank" href="#" onclick="employerurlreg()"
+                                    value="RegisterNow"> <span lang="en">Register Now </span></a>
+                                </br>
+                                </br>
+                                <p style="color: black;     text-align: center; font-size: large;  font-weight: 600;"
+                                    lang="en">-----Or-----
+                                </p>
+                                <p style="text-align: center;"><a target="_blank" href="#" onclick="employerurl()"
+                                        style=" font-size: large; color: #FC9928;"> <span lang="en">Login
+                                            Here</span></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear" style=" padding: 10px;"></div>
+                    <div class="titleTop" style="text-align: center;
+                    ">
+
+                        <h3 style="color: black;font-size: 28px;margin-top: 41%;"><span lang="en"
+                                style="color: black;font-weight: 600;">Top Vacancies</span></h3>
+                    </div>
+                    <div id="LatestDesignation" style="margin-top: 4%;"></div>
+
+
+                </div>
+
+
+
+                <!-- related jobs end -->
+                <div class="col-md-3">
+                    <!-- Social Icons -->
+                    <!-- Sponsord By -->
+                    <div class="sidebar" style="height: 430px;">
+
+                        <p style="color:#FC9928;     text-align: center;font-size: larger;    font-weight: 600;">
+                            <span lang="en"> M.P Rojgar</span></p>
+                        <div id="carousel2" style="height: 140px;" class="carousel slide" data-ride="carousel"
+                            data-interval="2000">
+                            <div class="carousel-inner" id="carouselmp">
+
+
+                            </div>
+                        </div>
+                        <div class="clearfix" style="padding-top: 30px"></div>
+                        <p style="color: #FC9928;     text-align: center;font-size: larger;    font-weight: 600;">
+                            <span lang="en"> YASHASWI</span></p>
+                        <div id="carousel3" style="height: 140px;" class="carousel slide" data-ride="carousel"
+                            data-interval="2000">
+                            <div class="carousel-inner" id="carouselyas">
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="sidebar" style="height: 350px;">
+                        <p style="color:#FC9928;     text-align: center;font-size: larger;    font-weight: 600;">
+                            <span lang="en">Our Success Stories</span></p>
+                        <br>
+                        <div class="hero-wrapper" style="height: 77%;">
+                            <div class="carousel-wrapper">
+                                <div id="video-carousel" class="carousel hero-carousel slide">
+                                    <!-- <ol class="carousel-indicators">
+                                        <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#video-carousel" data-slide-to="2" class=""></li>
+                                        <li data-target="#video-carousel" data-slide-to="3" class=""></li> 
+                                        <li data-target="#video-carousel" data-slide-to="4" class=""></li>                                 
+                                                                                                   </ol>
+                                     </ol>                                                           -->
+                                    <div class="carousel-inner" style="height: 110%;">
+                                        <div class="item active">
+                                            <video controls="" style="width: 104%;height: 88%;" controls
+                                                disablepictureinpicture controlslist="nodownload" muted>
+                                                <source src="video/video_12.mp4" type="video/mp4">
+
+                                            </video>
+
+                                        </div>
+                                        <div class="item">
+                                            <video controls="" style="width: 104%;height: 88%;" controls
+                                                disablepictureinpicture controlslist="nodownload" muted>
+                                                <source src="video/video_13.mp4" type="video/mp4">
+
+                                            </video>
+
+                                        </div>
+                                        <div class="item">
+                                            <video controls="" style="width: 104%;height: 88%;" controls
+                                                disablepictureinpicture controlslist="nodownload" muted>
+                                                <source src="video/video_14.mp4" type="video/mp4">
+
+                                            </video>
+
+                                        </div>
+
+                                        <div class="item">
+                                            <video controls="" style="width: 104%;height: 88%;" controls
+                                                disablepictureinpicture controlslist="nodownload" muted>
+                                                <source src="video/video_15.mp4" type="video/mp4">
+
+                                            </video>
+
+                                        </div>
+
+
+                                        <a class="left carousel-control" href="#video-carousel" data-slide="prev">
+                                            <i class="fa fa-chevron-left left"></i>
+                                        </a>
+                                        <a class="right carousel-control" href="#video-carousel" data-slide="next">
+                                            <i class="fa fa-chevron-right right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <span lang="en"><a href='/OurStories'>View More</a></span></p>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom: 30px">
+
+
+                    <ul class="jobslist row">
+                        <!--Job 1-->
+
+                        <li class="col-md-4 col-sm-6">
+                            <div class="jobint" style="background-color: rgb(231, 69, 164)">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12" style=" text-align: center;color: white;">
+                                        <!-- <h3 id="jobseeker" class="count">11078</h3>-->
+                                        <h3 id="jobseeker" class="count">0</h3>
+                                        <h5><span lang='en'>Active Job Seekers</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Job end-->
+
+                        <!--Job 2-->
+                        <li class="col-md-4 col-sm-6">
+                            <div class="jobint" style="background-color:#9747b8">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12" style=" text-align: center;color: white;">
+                                        <!--<h3 id="employers" class="count">7078</h3>-->
+                                        <h3 id="employers" class="count">0</h3>
+                                        <h5><span lang='en'>Active Employers</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Job end-->
+
+                        <!--Job 3-->
+                        <li class="col-md-4 col-sm-6">
+                            <div class="jobint" style="background-color:#f8a138">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12" style=" text-align: center;color: white;">
+                                        <!--<h3 id="Vacancies" class="count">87078</h3>-->
+                                        <h3 id="Vacancies" class="count">0</h3>
+                                        <h5><span lang='en'>Active Vacancies</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Top Employers start -->
+    <div class="section greybg">
+        <div class="container">
+            <!-- title start -->
+            <div class="titleTop">
+
+                <h3><span lang="en" style="color:#FC9928;font-weight:600;font-size:28px">Top Employers</span>
+                </h3>
+            </div>
+            <!-- title end -->
+
+
+            <div id="carouselnew">
+            </div>
+
+        </div>
+    </div>
+    <div class="container" style="margin-top: 25px;margin-bottom:25px;display: none;">
+        <div class="titleTop">
+
+            <h3><span style=" color:#FC9928;   font-size: 28px;
+                        font-weight: 600;" lang="en">Useful Web Link</span></h3>
+        </div>
+        <!-- <P>Useful Link</P> -->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-centered">
+
+
+                <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="10000">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="carousel-col">
+                                <div style="margin-top: 20px;">
+                                    <a href="https://www.mpinfo.org" target="_blank"> <img
+                                            src="images/rozgar.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="img-responsive" style="margin-top: 20px;">
+
+                                    <a href="https://upsc.gov.in/" target="_blank"> <img src="images/upsc.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="img-responsive" style="margin-top: 20px;">
+
+                                    <a href="http://peb.mp.gov.in/" target="_blank"> <img src="images/vyapam.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div style="margin-top: 20px;">
+
+                                    <a href="https://ssc.nic.in/" target="_blank"><img src="images/ssc.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div style="margin-top: 20px;">
+                                    <a href="https://www.ibps.in/" target="_blank"> <img src="images/ibps.jpg" />
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div style="margin-top: 20px;">
+
+                                    <a href="http://www.joinindianarmy.nic.in/Authentication.aspx" target="_blank"><img
+                                            src="images/JIA.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section greybg">
+        <div class="container">
+            <!-- title start -->
+            <div class="titleTop">
+
+                <h3> <span lang="en" style="color:#FC9928;font-weight:600;font-size:28px">Featured Jobs</span></h3>
+            </div>
+
+            <ul class="jobslist row" id="FeaturedJob">
+
+
+            </ul>
+
+            <div class="viewallbtn"><a href="#" style="    display: none;">View All Featured Jobs</a></div>
+            <!--button end-->
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <!-- title start -->
+            <div class="titleTop">
+
+                <h3><span lang="en" style="color:#FC9928;font-weight:600;font-size:28px">Popular Searches</span></h3>
+            </div>
+            <!-- title end -->
+
+            <div class="topsearchwrap row">
+
+                <div class="col-md-6">
+                    <!--Cities start-->
+                    <h5 lang="en" style="font-weight:600;font-size:20px;background: #FC9928;">Browse By Categories</h5>
+                    <div  class="browsejobby" style="background: #fff;
+                  padding: 15px;
+                  border: 1px solid #e3e3e3;
+                  box-shadow: 3px 5px 20px #888888;
+                  transition: 0.4s ease-in-out;
+                  -webkit-transition: 0.4s ease-in-out;">
+                        <ul class="row catelist" id="BrowseByCategories">
+                        </ul>
+                        <br>
+                        <a style="cursor:pointer;cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 600;
+                    float: right;
+                    width: 25%;
+                    color: #FC9928;" onclick="redirectpopularsearch('Categories')">View More</a>
+                    </div>
+                    <!--Cities end-->
+                </div>
+
+                <div class="col-md-6">
+                    <!--Cities start-->
+                    <h5 lang="en" style="font-weight:600;font-size:20px;background: #FC9928;">Browse By Location</h5>
+                    <div class="browsejobby" style="background: #fff;
+                  padding: 15px;
+                  border: 1px solid #e3e3e3;
+                  box-shadow: 3px 5px 20px #888888;
+                  transition: 0.4s ease-in-out;
+                  -webkit-transition: 0.4s ease-in-out;">
+                        <ul class="row catelist" id="BrowseByStates">
+                        </ul>
+                        <br>
+                        <a style="cursor:pointer;cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 600;
+                    float: right;
+                    width: 25%;
+                    color: #FC9928;" onclick="redirectpopularsearch('Location')">View More</a>
+                    </div>
+                    <!--Cities end-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Popular Searches ends -->
+
+
+
+
+    <!-- Video start -->
+
+
+
+
+    <footer>
+
+        <div class="footerWrap">
+  <div class="container">
+    <div class="row">
+      <!--About Us-->
+      <h5 style="font-size: 20px;"><span lang="en">SiteMap</span></h5>
+     <div class="col-md-3 col-sm-12"> 
+       <h5><span lang="en">Information</span></h5> 
+         <ul class="quicklinks">
+          <li><a href="/"><span lang="en">Home</span></a></li>
+          <li><a href="/about"><span lang="en"> About us</span></a></li>
+          <li><a href="/Contactus"><span lang="en">Contact us</span></a></li>
+          <li><a href="/PrivacyPolicy"><span lang="en">Privacy Policy</span></a></li> 
+        
+          <li><a href="/FeedBackForm"><span lang="en">Feedback</a></li>
+          
+         </ul> 
+         <h5 style="margin-top: 8px;display:none"><span lang="en">Jobs By Industry</span></h5>
+      
+        <ul class="quicklinks" style="display:none">
+          <li><a href="#."><span lang="en">Information Technology Jobs</span></a></li>
+          <li><a href="#."><span lang="en">Recruitment/Employment Firms Jobs</span></a></li>
+          <li><a href="#."><span lang="en">Education/Training Jobs</span></a></li>
+
+          <li><a href="#."><span lang="en">Call Center Jobs</span></a></li>
+
+          <li><a href="#."><span lang="en">BPO Jobs</span></a></li>
+
+        </ul> 
+       </div> 
+      <!--About us End-->
+
+      <!--Quick Links-->
+      <div class="col-md-3 col-sm-6">
+        <h5><span lang="en">Job Seekers Section</span></h5>
+        <!--Quick Links menu Start-->
+        <ul class="quicklinks">
+          <li><a href="/JobSeekerRegistration"><span lang="en">Register</span></a></li>
+          <li><a href="/Login"><span lang="en">Login</span></a></li>
+          <!-- <li><a href="#."><span lang="en">Advanced Search</span></a></li>
+          <li><a href="/JobAlerts"><span lang="en">Create Job Alert</span></a></li> -->
+          <!-- <li><a href="#."><span lang="en">Jobseekers FAQs</span></a></li> -->
+        </ul>
+        <div class="clear"></div>
+     
+        <div class="clear"></div>
+        <br>
+        <h5><span lang="en">Employer Section</span></h5>
+        <!--Quick Links menu Start-->
+        <ul class="quicklinks">
+          <li><a href="#" onclick="employerurlreg()"><span lang="en">Register</span></a></li>
+          <li><a href="#" onclick="employerurl()"><span lang="en">Login</span></a></li>
+          <!-- <li><a href="#."><span lang="en">Advanced Search</span></a></li>
+          <li><a href="/JobAlerts"><span lang="en">Create Job Alert</span></a></li> -->
+          <!-- <li><a href="#."><span lang="en">Jobseekers FAQs</span></a></li> -->
+        </ul>
+      </div>
+      <!--Quick Links menu end-->
+
+      <!--Jobs By Industry-->
+      <div class="col-md-3 col-sm-6">
+        <h5><span lang="en">Career Literature</span></h5>
+        <ul class="quicklinks">
+          <li style="display: none;"><a target="_blank" href="https://www.ncs.gov.in/content-repository/hi-in/Pages/Main.aspx"> <span lang="en">Company Secretary</span></a></li>
+          <li><a target="_blank" href="https://www.ncs.gov.in/content-repository/pages/BrowseBySectors.aspx"><span lang="en">Career Information</span></a></li>
+          <li style="display: none;"><a target="_blank" href="https://www.ncs.gov.in/content-repository/hi-in/Pages/Main.aspx"><span lang="en"> Carrer Guideline </span></a></li>
+        </ul>
+        <h5 style="margin-top: 8px;"><span lang="en">Career Counselling</span></h5>
+        <ul class="quicklinks">
+          <li><a href="/pdf/Career Counselling Scheme.pdf" target="_blank"><span lang="en">Career Counselling Scheme</span></a></li>
+          <li><a href="/CouncellerAccess"><span lang="en">Career Counselling QA</span></a></li>
+          <li style="display: none;"><a href="#" onclick="employerurlreg()"><span lang="en">Employer Registration</span></a></li>
+        </ul>
+
+        <div class="clear"></div>
+
+        <!--Industry menu End-->
+        <div class="clear"></div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5><span lang="en">Useful Web Links</span></h5>
+        <ul class="quicklinks">
+          <li><a href="https://www.mpinfo.org/MPinfoStatic/Hindi/eRojgar/e-rojgar.asp" target="_blank"><span lang="en">Rojgar Aur Nirman</span></a></li>
+          <li><a href="http://employmentnews.gov.in/" target="_blank"><span lang="en">Employment News</span></a></li>
+          <li><a href="http://www.mppsc.nic.in/Examination_plan.html" target="_blank"><span lang="en">MP Public Service Commission</span></a></li>
+          <li><a href="http://peb.mp.gov.in/" target="_blank"><span lang="en">MP Professional Examination Board</span></a></li>
+          <li><a href="https://www.upsc.gov.in/examinations/exam-calendar" target="_blank"><span lang="en">Union Public Service Commission</span></a></li>
+          <li><a href="http://www.joinindianarmy.nic.in/Authentication.aspx" target="_blank"><span lang="en">Indian Army</span></a>
+          </li>
+          
+          
+         
+          
+           <!-- <li><a href="/FeedBackForm"><span lang="en">Feedback</a></li>  -->
+          <li style="display: none;"><a href="http://www.mpindustry.gov.in/" target="_blank"><span lang="en">Industry Wing</span></a></li>
+          <li style="display: none;"><a href="http://employmentnews.gov.in/" target="_blank"><span lang="en">Employment News.</span></a></li>
+         
+        <div class="clear"></div>
+
+
+      </div>
+
+      <!--Latest Articles-->
+
+    </div>
+
+    
+  </div>
+  <div class="col-md-2">
+
+</div>
+</div>
+
+<!--Footer end-->
+
+<!--Copyright-->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+   
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="margin-top: 29px;">
+              <img src="https://www.cutercounter.com/hits.php?id=geqxpad&amp;nd=6&amp;style=72" style="border:0;display: block;margin: auto;padding-bottom: 10px;margin-top: -5%;" alt="visitor counter">                 
+            </div>
+          </div>
+              <div class="row">
+      <span lang="en" style="font-size: 15px;">All Rights Reserved to DOE MP, Operated by <a>Yashaswi Academy For Talent Management</a></span><br>
+      </a>
+      <span lang="en" style="font-size: 15px;">© 2020 Directorate of Employment, Madhya Pradesh</span>
+      
+      </div>
+      <!-- <div class="col-md-2">
+          <img src="https://www.cutercounter.com/hits.php?id=geqxpad&amp;nd=6&amp;style=72" style="border:0;margin-right: -241%;margin-top: 57px;margin-left: 667px" alt="visitor counter">
+      <div class="col-md-2">
+          <img src="https://www.cutercounter.com/hits.php?id=geqxpad&amp;nd=6&amp;style=72" style="border:0;margin-top: -4%;" alt="visitor counter">
+                         
+
+           border:0;margin-right: -241%;margin-top: -4%;margin-left: 667px;margin-top: 57px 
+    </div> -->
+    </div>
+  </div>
+
+
+
+
+    </footer>
+
+    <script>
+        // Instantiate the Bootstrap carousel
+        $('.carousel[data-type="multi"] .item').each(function () {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            for (var i = 0; i < 2; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="/customjs/Index.js"></script>
+    <script src="/customjs/Gallery.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).off('ajaxStart').on('ajaxStart', function () {
+                $.unblockUI();
+            });
+            $(document).off('ajaxStop').on('ajaxStop', function () {
+                $.unblockUI();
+            });
+            $('#whatsappnumberhelp').hide();
+           // Filljobfairs();
+            Cookies.remove('CandidateId');
+           // latestNotification();
+//FillPhotoUpload();
+            SessionClear();
+
+            FillState();
+            EmailConfig();
+            //FillBROWSEBYCATEGORIES();
+            //FillBROWSEBYStates();
+            //fetchLatestDesignation();
+            Counter();
+            Fetchweblinkurl()
+            //FetchFeaturedJob()
+            //FetchTopEmployers();
+            FillNote();
+
+            $("#11").on('click', function () {
+                $('#1').show();
+                $('#2').hide();
+                $('#3').hide();
+            })
+            $("#22").on('click', function () {
+                $('#1').hide();
+                $('#2').show();
+                $('#3').hide();
+            })
+            $("#33").on('click', function () {
+                $('#1').hide();
+                $('#2').hide();
+                $('#3').show();
+            })
+
+            $('.carousel:not("#EmployeeCarousel, #video-carousel")').carousel({
+                interval: 5000,
+                pause: false
+            });
+            initVideoCarousel();
+            initHeroCarousel();
+            $('#employerfeedback').attr('src', EmployerLogoPath + 'EmployerLogo/Ginni%20Filaments%20Ltd..jpg')
+
+        });
+        function redirectpopularsearch(type) {
+            sessionStorage.Popularsearchtype = type;
+            window.location = '/PopularSearchJob'
+        }
+        function initHeroCarousel() {
+            // $('.carousel#hero-carousel').carousel({
+            //     interval: false,
+            //     pause: false
+            // });
+            $('#hero-carousel').on('slid.bs.carousel', function () {
+                var video = $("#hero-carousel").find('.carousel-inner .item.active video');
+                if ($(video).length > 0) {
+                    $(video).off('play').on('play', function (e) {
+                        $("#hero-carousel").carousel('pause');
+                    });
+                    $(video).off('stop pause ended').on('stop pause ended', function (e) {
+                        $("#hero-carousel").carousel();
+                    });
+                    $(video).get(0).play();
+                }
+            });
+        }
+
+        function initVideoCarousel() {
+            $('#video-carousel').carousel({
+                interval: false
+            });
+            $('#video-carousel').on('slide.bs.carousel', function () {
+                $("#video-carousel").find('.carousel-inner .item.active video').get(0).pause();
+            });
+            $('#video-carousel').on('slid.bs.carousel', function () {
+                $("#video-carousel").find('.carousel-inner .item.active video').get(0).play();
+            });
+        }
+
+        function fetchTopEmployerslatest() {
+            var path = serverpath + "TopEmployers"
+            ajaxget(path, 'parsedataFetchTopEmployers', 'comment', "control");
+        }
+        function parsedataFetchTopEmployers(data) {
+            data = JSON.parse(data)
+            var data1 = data[0];
+            var appenddata = "";
+
+            for (var i = 0; i < data1.length; i++) {
+                if (data1[i].EmployerLogo != null || data1[i].EmployerLogo != undefined) {
+                    logosrc = EmployerLogoPath + 'EmployerLogo/' + encodeURI(data1[i].EmployerLogo)
+                }
+                else {
+                    logosrc = 'images/jobs/jobimg.jpg';
+                }
+                appenddata += `<a href="#"><img src='` + logosrc + `' style='height:90px; width:220px' alt='` + data1[i].CompName + `' /></a>`
+            }
+            $('#carouselnew').html(appenddata);
+
+            var carousel = $("#carouselnew").waterwheelCarousel({
+                flankingItems: 10,
+                separation: 280,
+                autoPlay: 3000
+            });
+        }
+        function FillBROWSEBYCATEGORIES() {
+            jQuery.ajax({
+                url: serverpath + "JobByIndustry/10",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    for (var i = 0; i < data[0].length; i++)
+                        appenddata += " <li class='col-md-6 col-sm-6'><a href='#'  onclick=SetJobByDesignation('" + encodeURI(data[0][i].Industry) + "') ><span class='CCcontainer' style='overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 150px;display:inline-block;color: black;'>" + data[0][i].Industry + " </span><span style='padding: 2px;'>(" + data[0][i].Vacancies + ")</span></a></li>"
+
+                    $('#BrowseByCategories').html(appenddata);
+
+                },
+                error: function (result) {
+                }
+            });
+        }
+
+        function FillBROWSEBYStates() {
+            jQuery.ajax({
+                url: serverpath + "JobByLocation/10",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    for (var i = 0; i < data[0].length; i++) {
+                        if (data[0][i].Location != null) {
+                            appenddata += " <li class='col-md-6 col-sm-6'><a  onclick=SetJobByLocation('" + encodeURI(data[0][i].Location) + "') href='#'><span style='overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 150px;display:inline-block;color: black;'>" + data[0][i].Location + "</span><span style='padding: 2px;'>(" + data[0][i].Vacancies + ")</span></a></li>"
+
+                        }
+                    }
+                    $('#BrowseByStates').html(appenddata);
+
+                },
+                error: function (result) {
+                }
+            });
+        }
+
+
+
+        function FillJobsByLocation() {
+            jQuery.ajax({
+                url: serverpath + "GovtJobByLocation/9",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    for (var i = 0; i < data[0].length; i++) {
+                        appenddata += "<li><a style='color: #999'>" + data[0][i].Location + "</a></li>"
+                    }
+                    $('#JobsByLocation').html(appenddata);
+
+                },
+                error: function (result) {
+                }
+            });
+        }
+        function FillJobsByDesignation() {
+            jQuery.ajax({
+                url: serverpath + "GovtJobByTitle/10",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    for (var i = 0; i < data[0].length; i++) {
+                        appenddata += "<li><a style='color: #999'>" + data[0][i].JobTitle + "</a></li>"
+                    }
+
+                    $('#JobsByDesignation').html(appenddata);
+
+                },
+                error: function (result) {
+                }
+            });
+        }
+        function FillJobByIndustry() {
+            jQuery.ajax({
+                url: serverpath + "GovtJobByIndustry/10",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    for (var i = 0; i < data[0].length; i++) {
+                        appenddata += "<li><a  style='color: #999'>" + data[0][i].Industry + "</a></li>"
+                    }
+
+                    $('#JobByDepartment').html(appenddata);
+
+                },
+                error: function (result) {
+                }
+            });
+        }
+        function fetchLatestDesignation() {
+            jQuery.ajax({
+                //  url: serverpath + "JobByTitle/9",
+                url: serverpath + "JobByIndustry/100",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    var appenddata = "";
+                    var Icon = ""
+                    for (var i = 0; i < data[0].length; i++) {
+                        if (data[0][i].Industry == 'Techinal Assistant' || data[0][i].Industry == 'Helper' || data[0][i].Industry == 'Full Stack Developer' || data[0][i].Industry == 'Receptionist' || data[0][i].Industry == 'Node Js' || data[0][i].Industry == 'Machine Operator' || data[0][i].Industry == 'Courier Boy' || data[0][i].Industry == 'Sales Officer' || data[0][i].Industry == 'Tele-Caller' || data[0][i].Industry == 'accountant' || data[0][i].Industry == 'Cook') {
+                            if (data[0][i].Industry == 'Teacher') {
+                                Icon = "/images/Designation/Teacher.png";
+                            }
+                            if (data[0][i].Industry == 'Helper') {
+                                Icon = "/images/Designation/Hospitality_Executives.svg";
+                            }
+                            if (data[0][i].Industry == 'Machine Operator') {
+                                Icon = "/images/Designation/Mechanic.svg";
+                            }
+                            if (data[0][i].Industry == 'Courier Boy') {
+                                Icon = "/images/Designation/Delivery_boy.svg";
+                            }
+
+                            if (data[0][i].Industry == 'Sales Officer') {
+                                Icon = "/images/Designation/Sales.svg";
+                            }
+                            if (data[0][i].Industry == 'Techinal Assistant') {
+                                Icon = "/images/Designation/Data_entry_Back_office.svg";
+                            }
+                            if (data[0][i].Industry == 'Tele-Caller') {
+                                Icon = "/images/Designation/BPO_Telecallers.svg";
+                            }
+                            if (data[0][i].Industry == 'Node Js' || data[0][i].Industry == 'Full Stack Developer') {
+                                Icon = "/images/Designation/IT-Software.svg";
+                                //'||data[0][i].Industry =='Full Stack Developer'||data[0][i].Industry =='React Native'||data[0][i].Industry =='React Js'||data[0][i].Industry =='PHP Developer'
+
+                            }
+                            if (data[0][i].Industry == 'Receptionist') {
+                                Icon = "/images/Designation/Receptionist_Front_office.svg";
+                            }
+
+                            if (data[0][i].Industry == 'accountant') {
+                                Icon = "/images/Designation/Accountant.svg";
+                                //   || data[0][i].Industry == 'Computer Operator'
+                            }
+                            if (data[0][i].Industry == 'Chef') {
+                                Icon = "/images/Designation/Cook.svg";
+                            }
+                            appenddata += "<div class='col-md-4'><div class='job-header'><div class='contentbox' style='text-align:center;    max-height: 140px;'> <a href='#' onclick=SetJobByDesignation('" + encodeURI(data[0][i].Industry) + "') style='    color: black;'> <img class='cardsimage' src='" + Icon + "' width='42' height='42' /><h5 class='cardheading'><div style=' overflow: hidden;text-overflow: ellipsis;white-space: nowrap;' >" + data[0][i].Industry + "</div></h5><span style='margin-left: -5%;'>(" + data[0][i].Vacancies + ")</span></a></div></div></div>"
+
+
+                        }
+
+                    }
+
+
+                    $('#LatestDesignation').html(appenddata);
+                },
+                error: function (result) {
+                }
+            });
+        }
+        function redirectoEmployer() {
+            setTimeout(function () {
+                window.location = EmployerLogoPath + '?er=1';
+            }, 300);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

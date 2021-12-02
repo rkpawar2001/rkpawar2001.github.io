@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Owl carousel -->
+<link href="/css/owl.carousel.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datepicker3.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="/css/font-awesome.css" rel="stylesheet">
+<link href="/css/captcha.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<!-- Custom Style -->
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/Carouselslide.css" rel="stylesheet">
+<link href="/css/jquery.magicsearch.css" rel="stylesheet">
+<link href="/css/croppie.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/print.min.css">
+<link href="/css/selectize.default.css" rel="stylesheet">
+<style>
+    /* .btn-access{
+        pointer-events: none; 
+    } */
+    </style>
+
+<script src="/js/jquery-2.1.4.min.js"></script> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="/js/jquery.blockUI.js"></script>
+<!-- Owl carousel > 
+<script src="/js/owl.carousel.js"></script--> 
+<script src="/js/bootstrap.min.js"></script> 
+<script src="/js/bootstrap-datepicker.js"></script> 
+
+<!-- Custom js --> 
+
+<script src="/js/js.cookie.js"></script>
+<script src="/js/jquery-lang.js"></script>
+<script src="/js/script.js"></script>
+<!-- <script src="/js/blockui.js" type="text/javascript"></script> -->
+  
+<script src="/js/global.js"></script>
+<script src="/js/TypeaHead.js"></script>
+<script src="/js/select2.min.js"></script>
+
+
+<script src="/js/toastr.min.js"></script>
+<script src="/js/aadhaarvalidation.js"></script>
+<script src="/customjs/common.js"></script>
+    
+
+<script src="/js/jquery.magicsearch.js"></script>
+<script src="/js/croppie.js"></script>
+<script src="/js/smtp.js"></script>
+<script src="../js/md5.js" type="text/javascript"></script>
+<script src="/js/printThis.js"></script>
+<script src="/js/selectize.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script type='text/javascript' src="/js/jspdf.debug.js"></script>
+<script type='text/javascript' src="/js/pagination.js"></script>
+<script type='text/javascript' src="/js/jquery.waterwheelCarousel.js"></script>
+
+<script type="text/javascript">
+    var lang = new Lang();
+    lang.dynamic('th', '/js/langpack/th.json');
+    lang.init({
+      defaultLang: 'en'
+    });
+   
+  </script>
+  
+  <script>
+    $(function(){
+    $('.rojdatepicker').datepicker({ 
+      format: "dd/mm/yyyy",
+      clearBtn: true,
+      daysOfWeekHighlighted: "0",
+      autoclose: true,
+      todayHighlight: true,
+      container: '#myModal1'
+    });
+    })
+    
+    </script>
+
+<script>
+  //  $( ".btn.btn-access" ).css('pointer-events','none')
+  // $( ".btn.btn-access" ).attr( "disabled", true );
+  $(document).ready(function() {
+    $(document).off('ajaxStart').on('ajaxStart', function(){
+                $.blockUI({ message: '<img src="images/loading.gif" style="width:50px;height:50px" />' });
+            } );
+            $(document).off('ajaxStop').on('ajaxStop', function(){
+                $.unblockUI();
+            });
+    setTimeout(function(){ if (Cookies.get("langCookie") == "th") {
+      $("#lblh").text("English");
+    }
+    else {
+      $("#lblh").text("Hindi");
+    }
+  },500);
+  
+    $('#nav-main ul > li').on('mouseenter', function() {
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+    });
+    $('#nav-main ul > li').on('click', function() {
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      if(!$(this).hasClass('dropdown')) {
+        $('#nav-main').removeClass('in');
+      }
+    });
+    $('#nav-main ul > li').on('mouseleave', function() {
+      $(this).removeClass('active');
+    });
+
+    $(document).click(function(event) {
+      if(!event) {
+        event = window.event; 
+      }
+      var source = event.target;
+      if($(source).closest('#nav-main').length == 0) {
+        $('#nav-main').removeClass('in');
+      }
+    });
+
+  });
+   function fetchNotification() {
+            jQuery.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: serverpath + "jobseekerreg/'"+sessionStorage.getItem("CandidateId")+"'",
+                cache: false,
+                dataType: "json",
+                success: function (data) {
+                    if ( data.jobalert_email  == "1") {
+                                      $("#emailswitch").prop("checked", true);
+                                   } else {
+                                    $("#emailswitch").prop("checked", false);
+                                        }
+                                
+                 
+                },
+                error: function (xhr) {
+                    toastr.success(xhr.d, "", "error")
+                    return true;
+                }
+            });
+        }
+</script>
+
+          
+<script>
+  $.getJSON("https://api.ipify.org?format=json", 
+                    function(data) { 
+
+  sessionStorage.ipAddress= data.ip; 
+  }) 
+</script>
+ 
+
+      
+
+
+    <style>
+        @media only screen and (max-width: 767px) {
+            .sidebar.registerNow {
+                margin-left: 17%;
+            }
+        }
+
+        .cardsimage {
+            margin-top: -11px;
+        }
+
+        .hero-wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .hero-wrapper .carousel-wrapper,
+        .hero-carousel {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+
+
+        .hero-carousel .carousel-inner,
+        .hero-carousel .item {
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-carousel img {
+            left: 0;
+            bottom: 0;
+
+            min-height: 100%;
+            max-width: none;
+            width: auto;
+            height: auto;
+        }
+
+        .hero-carousel i {
+            position: absolute;
+            top: 50%;
+        }
+
+        .carousel-fade .carousel-inner .item {
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .carousel-fade .carousel-inner .active {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-inner .active.left,
+        .carousel-fade .carousel-inner .active.right {
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .carousel-fade .carousel-inner .next.left,
+        .carousel-fade .carousel-inner .prev.right {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-control {
+            z-index: 2;
+        }
+        .registration {
+    height: 97px;
+}
+.browsejobby{
+    height: 245px;
+}
+        @media screen and (max-width: 767px){
+.registration {
+    margin-top: 30px;
+    height: 186px;
+}
+.browsejobby{
+    height: 424px;
+}
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="sidebar" style="height: 350px;">
+        <p style="color:#FC9928;     text-align: center;font-size: larger;    font-weight: 600;">
+            <span lang="en">Our Success Stories</span></p>
+        <br>
+        <div class="hero-wrapper" style="height: 77%;">
+            <div class="carousel-wrapper">
+                <div id="video-carousel" class="carousel hero-carousel slide">
+                    <!-- <ol class="carousel-indicators">
+                        <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#video-carousel" data-slide-to="2" class=""></li>
+                        <li data-target="#video-carousel" data-slide-to="3" class=""></li> 
+                        <li data-target="#video-carousel" data-slide-to="4" class=""></li>                                 
+                                                                                   </ol>
+                     </ol>                                                           -->
+                    <div class="carousel-inner" style="height: 110%;">
+                        <div class="item active">
+                            <video controls="" style="width: 104%;height: 88%;" disablepictureinpicture="" controlslist="nodownload" muted="">
+                                <source src="video/video_12.mp4" type="video/mp4">
+
+                            </video>
+
+                        </div>
+                        <div class="item">
+                            <video controls="" style="width: 104%;height: 88%;" disablepictureinpicture="" controlslist="nodownload" muted="">
+                                <source src="video/video_13.mp4" type="video/mp4">
+
+                            </video>
+
+                        </div>
+                        <div class="item">
+                            <video controls="" style="width: 104%;height: 88%;" disablepictureinpicture="" controlslist="nodownload" muted="">
+                                <source src="video/video_14.mp4" type="video/mp4">
+
+                            </video>
+
+                        </div>
+
+                        <div class="item">
+                            <video controls="" style="width: 104%;height: 88%;" disablepictureinpicture="" controlslist="nodownload" muted="">
+                                <source src="video/video_15.mp4" type="video/mp4">
+
+                            </video>
+
+                        </div>
+
+
+                        <a class="left carousel-control" href="#video-carousel" data-slide="prev">
+                            <i class="fa fa-chevron-left left"></i>
+                        </a>
+                        <a class="right carousel-control" href="#video-carousel" data-slide="next">
+                            <i class="fa fa-chevron-right right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <span lang="en"><a href="/OurStories">View More</a></span><p></p>
+
+    </div>
+</body>
+</html>
